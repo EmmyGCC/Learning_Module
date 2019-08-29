@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"D:\IAR for ARM\common\bin\cspybat" -f "C:\Users\Administrator\Desktop\test_ADC_Temp\EWARM\settings\test_ADC_Temp.test_ADC_Temp.general.xcl" --backend -f "C:\Users\Administrator\Desktop\test_ADC_Temp\EWARM\settings\test_ADC_Temp.test_ADC_Temp.driver.xcl" 
+"D:\IAR for ARM\common\bin\cspybat" -f "E:\Git_Repo\test_ADC_RTC\EWARM\settings\test_ADC_Temp.test_ADC_Temp.general.xcl" --backend -f "E:\Git_Repo\test_ADC_RTC\EWARM\settings\test_ADC_Temp.test_ADC_Temp.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"D:\IAR for ARM\common\bin\cspybat" -f "C:\Users\Administrator\Desktop\test_ADC_Temp\EWARM\settings\test_ADC_Temp.test_ADC_Temp.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\Administrator\Desktop\test_ADC_Temp\EWARM\settings\test_ADC_Temp.test_ADC_Temp.driver.xcl" 
+"D:\IAR for ARM\common\bin\cspybat" -f "E:\Git_Repo\test_ADC_RTC\EWARM\settings\test_ADC_Temp.test_ADC_Temp.general.xcl" "--debug_file=%~1" --backend -f "E:\Git_Repo\test_ADC_RTC\EWARM\settings\test_ADC_Temp.test_ADC_Temp.driver.xcl" 
 
 @echo off 
 :end

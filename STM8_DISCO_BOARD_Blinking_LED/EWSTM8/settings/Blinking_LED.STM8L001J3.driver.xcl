@@ -1,0 +1,15 @@
+"-p" 
+
+"D:\IAR for STM8\stm8\config\ddf\iostm8l050j3.ddf" 
+
+"--mcuname" 
+
+"STM8L050J3" 
+
+"--verify_download" 
+
+"--erase_memory" 
+
+
+
+

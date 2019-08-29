@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\Blinking_LED.ewp</path>
+    </project>
+    <batchBuild>
+        <batchDefinition>
+            <name>BuildAll</name>
+            <member>
+                <project>Blinking_LED</project>
+                <configuration>STM8L001J3</configuration>
+            </member>
+            <member>
+                <project>Blinking_LED</project>
+                <configuration>STM8L050J3</configuration>
+            </member>
+            <member>
+                <project>Blinking_LED</project>
+                <configuration>STM8S001J3</configuration>
+            </member>
+        </batchDefinition>
+    </batchBuild>
+</workspace>

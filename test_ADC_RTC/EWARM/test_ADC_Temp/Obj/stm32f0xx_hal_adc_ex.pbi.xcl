@@ -1,19 +1,19 @@
-"C:\Users\Administrator\Desktop\test_ADC_Temp\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_adc_ex.c"
+"E:\Git_Repo\test_ADC_RTC\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_adc_ex.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -I
-C:\Users\Administrator\Desktop\test_ADC_Temp\Drivers\STM32F0xx_HAL_Driver\Src
+E:\Git_Repo\test_ADC_RTC\Drivers\STM32F0xx_HAL_Driver\Src
 -I
-C:\Users\Administrator\Desktop\test_ADC_Temp\EWARM/../Inc
+E:\Git_Repo\test_ADC_RTC\EWARM/../Inc
 -I
-C:\Users\Administrator\Desktop\test_ADC_Temp\EWARM/../Drivers/STM32F0xx_HAL_Driver/Inc
+E:\Git_Repo\test_ADC_RTC\EWARM/../Drivers/STM32F0xx_HAL_Driver/Inc
 -I
-C:\Users\Administrator\Desktop\test_ADC_Temp\EWARM/../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy
+E:\Git_Repo\test_ADC_RTC\EWARM/../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy
 -I
-C:\Users\Administrator\Desktop\test_ADC_Temp\EWARM/../Drivers/CMSIS/Device/ST/STM32F0xx/Include
+E:\Git_Repo\test_ADC_RTC\EWARM/../Drivers/CMSIS/Device/ST/STM32F0xx/Include
 -I
-C:\Users\Administrator\Desktop\test_ADC_Temp\EWARM/../Drivers/CMSIS/Include
+E:\Git_Repo\test_ADC_RTC\EWARM/../Drivers/CMSIS/Include
 -I
 D:\IAR for ARM\arm\CMSIS\Core\Include
 -I
@@ -23,15 +23,15 @@ D:\IAR for ARM\arm\inc
 -I
 D:\IAR for ARM\arm\inc\c
 -I
-C:\Users\Administrator\Desktop\test_ADC_Temp\Inc
+E:\Git_Repo\test_ADC_RTC\Inc
 -I
-C:\Users\Administrator\Desktop\test_ADC_Temp\Drivers\STM32F0xx_HAL_Driver\Inc
+E:\Git_Repo\test_ADC_RTC\Drivers\STM32F0xx_HAL_Driver\Inc
 -I
-C:\Users\Administrator\Desktop\test_ADC_Temp\Drivers\STM32F0xx_HAL_Driver\Inc\Legacy
+E:\Git_Repo\test_ADC_RTC\Drivers\STM32F0xx_HAL_Driver\Inc\Legacy
 -I
-C:\Users\Administrator\Desktop\test_ADC_Temp\Drivers\CMSIS\Device\ST\STM32F0xx\Include
+E:\Git_Repo\test_ADC_RTC\Drivers\CMSIS\Device\ST\STM32F0xx\Include
 -I
-C:\Users\Administrator\Desktop\test_ADC_Temp\Drivers\CMSIS\Include
+E:\Git_Repo\test_ADC_RTC\Drivers\CMSIS\Include
 -I
 D:\IAR for ARM\arm\CMSIS\Core\Include
 -I

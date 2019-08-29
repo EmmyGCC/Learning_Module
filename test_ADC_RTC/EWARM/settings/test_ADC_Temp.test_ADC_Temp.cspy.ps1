@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "D:\IAR for ARM\common\bin\cspybat" -f "C:\Users\Administrator\Desktop\test_ADC_Temp\EWARM\settings\test_ADC_Temp.test_ADC_Temp.general.xcl" --backend -f "C:\Users\Administrator\Desktop\test_ADC_Temp\EWARM\settings\test_ADC_Temp.test_ADC_Temp.driver.xcl" 
+& "D:\IAR for ARM\common\bin\cspybat" -f "E:\Git_Repo\test_ADC_RTC\EWARM\settings\test_ADC_Temp.test_ADC_Temp.general.xcl" --backend -f "E:\Git_Repo\test_ADC_RTC\EWARM\settings\test_ADC_Temp.test_ADC_Temp.driver.xcl" 
 }
 else
 {
-& "D:\IAR for ARM\common\bin\cspybat" -f "C:\Users\Administrator\Desktop\test_ADC_Temp\EWARM\settings\test_ADC_Temp.test_ADC_Temp.general.xcl" --debug_file=$debugfile --backend -f "C:\Users\Administrator\Desktop\test_ADC_Temp\EWARM\settings\test_ADC_Temp.test_ADC_Temp.driver.xcl" 
+& "D:\IAR for ARM\common\bin\cspybat" -f "E:\Git_Repo\test_ADC_RTC\EWARM\settings\test_ADC_Temp.test_ADC_Temp.general.xcl" --debug_file=$debugfile --backend -f "E:\Git_Repo\test_ADC_RTC\EWARM\settings\test_ADC_Temp.test_ADC_Temp.driver.xcl" 
 }

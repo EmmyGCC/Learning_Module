@@ -1,0 +1,20 @@
+;	STMicroelectronics Workspace file
+
+[Version]
+Keyword=ST7Workspace-V0.7
+
+[Project0]
+Filename=stm8s001j3_blinking_led.stp
+Dependencies=
+
+[Project1]
+Filename=stm8l001j3_blinking_led.stp
+Dependencies=
+
+[Project2]
+Filename=stm8l050j3_blinking_led.stp
+Dependencies=
+[Options]
+ActiveProject=STM8L050J3_Blinking_LED
+ActiveConfig=Debug
+AddSortedElements=0
