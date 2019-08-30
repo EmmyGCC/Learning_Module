@@ -1,8 +1,10 @@
 ﻿E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\EWSTM8\STM8L001J3\Obj\Blinking_LED.pbd
 E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\EWSTM8\STM8L001J3\Obj\main.pbi
 E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\EWSTM8\STM8L001J3\Obj\stm8_so8_disco.pbi
-E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\EWSTM8\STM8L001J3\Obj\stm8l15x_clk.pbi
-E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\EWSTM8\STM8L001J3\Obj\stm8l15x_exti.pbi
-E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\EWSTM8\STM8L001J3\Obj\stm8l15x_gpio.pbi
-E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\EWSTM8\STM8L001J3\Obj\stm8l15x_it.pbi
-E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\EWSTM8\STM8L001J3\Obj\stm8l15x_tim4.pbi
+E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\EWSTM8\STM8L001J3\Obj\stm8l10x_awu.pbi
+E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\EWSTM8\STM8L001J3\Obj\stm8l10x_clk.pbi
+E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\EWSTM8\STM8L001J3\Obj\stm8l10x_exti.pbi
+E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\EWSTM8\STM8L001J3\Obj\stm8l10x_gpio.pbi
+E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\EWSTM8\STM8L001J3\Obj\stm8l10x_it.pbi
+E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\EWSTM8\STM8L001J3\Obj\stm8l10x_tim2.pbi
+E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\EWSTM8\STM8L001J3\Obj\stm8l10x_tim4.pbi

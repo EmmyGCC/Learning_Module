@@ -1,10 +1,10 @@
-"E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\STM8L050J3\src\main.c"
+"E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\STM8L001J3\src\main.c"
 -std=c99
 -ferror-limit=0
 -I
-E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\EWSTM8\..\STM8L050J3\inc
+E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\EWSTM8\..\STM8L001J3\inc
 -I
-E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\EWSTM8\..\Libraries\STM8L15x_StdPeriph_Driver\inc
+E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\EWSTM8\..\Libraries\STM8L10x_StdPeriph_Driver\inc
 -I
 E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\EWSTM8\..\STM8-SO8_Discovery
 -I
@@ -12,9 +12,9 @@ D:\IAR for STM8\stm8\inc
 -I
 D:\IAR for STM8\stm8\inc\c
 -I
-E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\STM8L050J3\inc
+E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\STM8L001J3\inc
 -I
-E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\Libraries\STM8L15x_StdPeriph_Driver\inc
+E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\Libraries\STM8L10x_StdPeriph_Driver\inc
 -I
 E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\STM8-SO8_Discovery
 -D__CHAR_BITS__=8
@@ -261,7 +261,7 @@ E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\STM8-SO8_Discovery
 -D__EDG_SYSV=0
 -D__EDG_ANSIC=1
 -D__EDG_CPP11_IL_EXTENSIONS_SUPPORTED=1
--DSTM8L05X_LD_VL=1
+-DSTM8L001=1
 -D_DLIB_CONFIG_FILE_HEADER_NAME="D:\IAR for STM8\stm8\LIB\dlstm8smn.h"
 -D_DLIB_CONFIG_FILE_STRING="D:\\IAR for STM8\\stm8\\LIB\\dlstm8smn.h"
 -D__VERSION__="IAR C/C++ Compiler V3.10.1.201 for STM8"

@@ -28,7 +28,7 @@
                 </option>
                 <option>
                     <name>CSpyRunToName</name>
-                    <state>main()</state>
+                    <state>main</state>
                 </option>
                 <option>
                     <name>CSpyMacOverride</name>
@@ -48,7 +48,7 @@
                 </option>
                 <option>
                     <name>CSpyDDFFile</name>
-                    <state>$TOOLKIT_DIR$\config\ddf\iostm8l050j3.ddf</state>
+                    <state>$TOOLKIT_DIR$\config\ddf\iostm8l001j3.ddf</state>
                 </option>
                 <option>
                     <name>CSpyEnableExtraOptions</name>
@@ -203,7 +203,7 @@
                 </option>
                 <option>
                     <name>STlinkEraseMemory</name>
-                    <state>1</state>
+                    <state>0</state>
                 </option>
             </data>
         </settings>

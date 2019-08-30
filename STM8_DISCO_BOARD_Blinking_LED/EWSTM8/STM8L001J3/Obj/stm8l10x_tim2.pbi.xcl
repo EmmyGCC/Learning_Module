@@ -1,22 +1,22 @@
-"C:\Users\Administrator\Desktop\STM8SO8_Discovery_FW_V1.0.0\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_tim2.c"
+"E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_tim2.c"
 -std=c99
 -ferror-limit=0
 -I
-C:\Users\Administrator\Desktop\STM8SO8_Discovery_FW_V1.0.0\Project\Blinking_LED\EWSTM8\..\STM8L001J3\inc
+E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\EWSTM8\..\STM8L001J3\inc
 -I
-C:\Users\Administrator\Desktop\STM8SO8_Discovery_FW_V1.0.0\Project\Blinking_LED\EWSTM8\..\..\..\Libraries\STM8L10x_StdPeriph_Driver\inc
+E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\EWSTM8\..\Libraries\STM8L10x_StdPeriph_Driver\inc
 -I
-C:\Users\Administrator\Desktop\STM8SO8_Discovery_FW_V1.0.0\Project\Blinking_LED\EWSTM8\..\..\..\Utilities\STM8-SO8_Discovery
+E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\EWSTM8\..\STM8-SO8_Discovery
 -I
 D:\IAR for STM8\stm8\inc
 -I
 D:\IAR for STM8\stm8\inc\c
 -I
-C:\Users\Administrator\Desktop\STM8SO8_Discovery_FW_V1.0.0\Project\Blinking_LED\STM8L001J3\inc
+E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\STM8L001J3\inc
 -I
-C:\Users\Administrator\Desktop\STM8SO8_Discovery_FW_V1.0.0\Libraries\STM8L10x_StdPeriph_Driver\inc
+E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\Libraries\STM8L10x_StdPeriph_Driver\inc
 -I
-C:\Users\Administrator\Desktop\STM8SO8_Discovery_FW_V1.0.0\Utilities\STM8-SO8_Discovery
+E:\Git_Repo\STM8_DISCO_BOARD_Blinking_LED\STM8-SO8_Discovery
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0

@@ -3149,44 +3149,47 @@
         <name>Drivers</name>
         <group>
             <name>BSP</name>
-            <file>
-                <name>$PROJ_DIR$\..\STM8-SO8_Discovery\stm8_so8_disco.c</name>
-            </file>
         </group>
         <group>
             <name>STM8L10x_StdPeriph_Driver</name>
             <file>
-                <name>$PROJ_DIR$\..\..\..\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_awu.c</name>
+                <name>$PROJ_DIR$\..\STM8-SO8_Discovery\stm8_so8_disco.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_clk.c</name>
+                <name>$PROJ_DIR$\..\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_awu.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_exti.c</name>
+                <name>$PROJ_DIR$\..\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_clk.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_gpio.c</name>
+                <name>$PROJ_DIR$\..\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_exti.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_tim2.c</name>
+                <name>$PROJ_DIR$\..\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_gpio.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_tim4.c</name>
+                <name>$PROJ_DIR$\..\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_tim2.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_tim4.c</name>
             </file>
         </group>
         <group>
             <name>STM8L15x_StdPeriph_Driver</name>
             <file>
-                <name>$PROJ_DIR$\..\Libraries\STM8L15x_StdPeriph_Driver\src\stm8l15x_clk.c</name>
+                <name>$PROJ_DIR$\..\..\..\Libraries\STM8L15x_StdPeriph_Driver\src\stm8l15x_aes.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\Libraries\STM8L15x_StdPeriph_Driver\src\stm8l15x_exti.c</name>
+                <name>$PROJ_DIR$\..\..\..\Libraries\STM8L15x_StdPeriph_Driver\src\stm8l15x_clk.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\Libraries\STM8L15x_StdPeriph_Driver\src\stm8l15x_gpio.c</name>
+                <name>$PROJ_DIR$\..\..\..\Libraries\STM8L15x_StdPeriph_Driver\src\stm8l15x_exti.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\Libraries\STM8L15x_StdPeriph_Driver\src\stm8l15x_tim4.c</name>
+                <name>$PROJ_DIR$\..\..\..\Libraries\STM8L15x_StdPeriph_Driver\src\stm8l15x_gpio.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\Libraries\STM8L15x_StdPeriph_Driver\src\stm8l15x_tim4.c</name>
             </file>
         </group>
         <group>
@@ -3220,6 +3223,9 @@
             <name>STM8L050J3</name>
             <file>
                 <name>$PROJ_DIR$\..\STM8L050J3\src\main.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\STM8L050J3\inc\stm8l15x_conf.h</name>
             </file>
             <file>
                 <name>$PROJ_DIR$\..\STM8L050J3\src\stm8l15x_it.c</name>

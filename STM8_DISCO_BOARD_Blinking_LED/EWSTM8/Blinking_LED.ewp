@@ -16,7 +16,7 @@
                 <debug>0</debug>
                 <option>
                     <name>GenDeviceSelectMenu</name>
-                    <state>STM8L050J3	STM8L050J3</state>
+                    <state>STM8L001J3	STM8L001J3</state>
                 </option>
                 <option>
                     <name>GenCodeModel</name>
@@ -146,7 +146,7 @@
                 </option>
                 <option>
                     <name>IccOptLevel</name>
-                    <state>3</state>
+                    <state>2</state>
                 </option>
                 <option>
                     <name>IccOptStrategy</name>
@@ -155,12 +155,12 @@
                 </option>
                 <option>
                     <name>IccOptLevelSlave</name>
-                    <state>3</state>
+                    <state>2</state>
                 </option>
                 <option>
                     <name>IccOptAllowList</name>
                     <version>0</version>
-                    <state>111111</state>
+                    <state>100100</state>
                 </option>
                 <option>
                     <name>IccGenerateDebugInfo</name>
@@ -188,7 +188,7 @@
                 </option>
                 <option>
                     <name>CCDefines</name>
-                    <state>STM8L05X_LD_VL</state>
+                    <state>STM8L001</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
@@ -256,8 +256,8 @@
                 </option>
                 <option>
                     <name>CCIncludePath2</name>
-                    <state>$PROJ_DIR$\..\STM8L050J3\inc</state>
-                    <state>$PROJ_DIR$\..\Libraries\STM8L15x_StdPeriph_Driver\inc</state>
+                    <state>$PROJ_DIR$\..\STM8L001J3\inc</state>
+                    <state>$PROJ_DIR$\..\Libraries\STM8L10x_StdPeriph_Driver\inc</state>
                     <state>$PROJ_DIR$\..\STM8-SO8_Discovery</state>
                 </option>
                 <option>
@@ -489,7 +489,7 @@
                 </option>
                 <option>
                     <name>OOCOutputFile</name>
-                    <state>STM8L050J3_Blinking_LED.hex</state>
+                    <state>STM8L001J3_Blinking_LED.hex</state>
                 </option>
                 <option>
                     <name>OOCCommandLineProducer</name>
@@ -2414,52 +2414,55 @@
         <name>Drivers</name>
         <group>
             <name>BSP</name>
-            <file>
-                <name>$PROJ_DIR$\..\STM8-SO8_Discovery\stm8_so8_disco.c</name>
-            </file>
         </group>
         <group>
             <name>STM8L10x_StdPeriph_Driver</name>
             <excluded>
-                <configuration>STM8L001J3</configuration>
                 <configuration>STM8L050J3</configuration>
                 <configuration>STM8S001J3</configuration>
             </excluded>
             <file>
-                <name>$PROJ_DIR$\..\..\..\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_awu.c</name>
+                <name>$PROJ_DIR$\..\STM8-SO8_Discovery\stm8_so8_disco.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_clk.c</name>
+                <name>$PROJ_DIR$\..\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_awu.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_exti.c</name>
+                <name>$PROJ_DIR$\..\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_clk.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_gpio.c</name>
+                <name>$PROJ_DIR$\..\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_exti.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_tim2.c</name>
+                <name>$PROJ_DIR$\..\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_gpio.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\..\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_tim4.c</name>
+                <name>$PROJ_DIR$\..\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_tim2.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\Libraries\STM8L10x_StdPeriph_Driver\src\stm8l10x_tim4.c</name>
             </file>
         </group>
         <group>
             <name>STM8L15x_StdPeriph_Driver</name>
             <excluded>
+                <configuration>STM8L001J3</configuration>
                 <configuration>STM8S001J3</configuration>
             </excluded>
             <file>
-                <name>$PROJ_DIR$\..\Libraries\STM8L15x_StdPeriph_Driver\src\stm8l15x_clk.c</name>
+                <name>$PROJ_DIR$\..\..\..\Libraries\STM8L15x_StdPeriph_Driver\src\stm8l15x_aes.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\Libraries\STM8L15x_StdPeriph_Driver\src\stm8l15x_exti.c</name>
+                <name>$PROJ_DIR$\..\..\..\Libraries\STM8L15x_StdPeriph_Driver\src\stm8l15x_clk.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\Libraries\STM8L15x_StdPeriph_Driver\src\stm8l15x_gpio.c</name>
+                <name>$PROJ_DIR$\..\..\..\Libraries\STM8L15x_StdPeriph_Driver\src\stm8l15x_exti.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\Libraries\STM8L15x_StdPeriph_Driver\src\stm8l15x_tim4.c</name>
+                <name>$PROJ_DIR$\..\..\..\Libraries\STM8L15x_StdPeriph_Driver\src\stm8l15x_gpio.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\..\Libraries\STM8L15x_StdPeriph_Driver\src\stm8l15x_tim4.c</name>
             </file>
         </group>
         <group>
@@ -2487,7 +2490,6 @@
         <group>
             <name>STM8L001J3</name>
             <excluded>
-                <configuration>STM8L001J3</configuration>
                 <configuration>STM8L050J3</configuration>
                 <configuration>STM8S001J3</configuration>
             </excluded>
@@ -2501,10 +2503,14 @@
         <group>
             <name>STM8L050J3</name>
             <excluded>
+                <configuration>STM8L001J3</configuration>
                 <configuration>STM8S001J3</configuration>
             </excluded>
             <file>
                 <name>$PROJ_DIR$\..\STM8L050J3\src\main.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\STM8L050J3\inc\stm8l15x_conf.h</name>
             </file>
             <file>
                 <name>$PROJ_DIR$\..\STM8L050J3\src\stm8l15x_it.c</name>

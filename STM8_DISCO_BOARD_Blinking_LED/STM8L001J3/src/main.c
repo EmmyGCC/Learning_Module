@@ -40,12 +40,13 @@
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 #define TIM4_PERIOD                    124
-#define TIM2_PERIOD                    62499
+#define TIM2_PERIOD                    124
 
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 static __IO uint32_t TimingDelay;
 volatile uint8_t BlinkSpeed =0;
+volatile uint32_t LSI_Clock_Freq_value = 0;
 
 /* Private function prototypes -----------------------------------------------*/
 void LED_Blink(void);
@@ -56,7 +57,7 @@ void Delay(__IO uint32_t nTime);
 void TimingDelay_Decrement(void);
 
 static void AWU_Config(void);
-uint32_t LSI_Measurement(void);
+void LSI_Measurement(void);
 
 /* Private functions ---------------------------------------------------------*/
 
@@ -69,37 +70,33 @@ void main(void)
 {
   /* Clock configuration */
   CLK_Config();
-
-  /* AWU configuration */
-  //AWU_Config();
   
   /* Timer configuration */
   TIM4_Config();
-
+  
+  /* AWU configuration */
+  AWU_Config();
+  
   /* GPIO configuration */
   GPIO_Config();
-
+  
   /* enable interrupts */
   enableInterrupts();
-
-  //halt();
+  
   while (1)
   {
     LED_Blink();
-	
   }
 }
 
 
-uint32_t LSI_Measurement(void)
+void LSI_Measurement(void)
 {
-  uint32_t LSI_Clock_Freq_value = 0;
-  
   AWU->CSR |= AWU_CSR_MSR;
-  LSI_Clock_Freq_value = TIM2_ComputeLsiClockFreq(CLK_GetClockFreq());
-  AWU->CSR &= (uint8_t)(~AWU_CSR_MSR);//禁止LSI测量，断开LSI与捕获通道的连接
   
-  return LSI_Clock_Freq_value;
+  LSI_Clock_Freq_value = TIM2_ComputeLsiClockFreq(CLK_GetClockFreq());
+  
+  AWU->CSR &= (uint8_t)(~AWU_CSR_MSR);	//禁止LSI测量，断开LSI与捕获通道的连接
 }
 
 
@@ -145,12 +142,14 @@ void LED_Blink(void)
       break;
     }
   }
+  halt();
 }
 
 
 void AWU_Config(void)
 {
-  AWU_LSICalibrationConfig(LSI_Measurement());
+  LSI_Measurement();
+  AWU_LSICalibrationConfig(LSI_Clock_Freq_value);
   AWU_Init(AWU_Timebase_2s);
 }
 
@@ -201,12 +200,11 @@ static void CLK_Config(void)
   /* ENABLE TIM4 peripheral clock */
   CLK_PeripheralClockConfig(CLK_Peripheral_TIM4, ENABLE);
   
-  /* ENABLE AWU peripheral clock */
-  CLK_PeripheralClockConfig(CLK_Peripheral_AWU, ENABLE);
-  
   /* ENABLE TIM2 peripheral clock */
   CLK_PeripheralClockConfig(CLK_Peripheral_TIM2, ENABLE);
   
+  /* ENABLE AWU peripheral clock */
+  CLK_PeripheralClockConfig(CLK_Peripheral_AWU, ENABLE);
 }
 
 /**
