@@ -866,7 +866,7 @@
                     <item>BlinkSpeed</item>
                     <item>TimingDelay</item>
                     <item>LSI_Clock_Freq_value</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>

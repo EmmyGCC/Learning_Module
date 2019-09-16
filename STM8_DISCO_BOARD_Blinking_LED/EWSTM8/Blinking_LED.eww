@@ -3,6 +3,9 @@
     <project>
         <path>$WS_DIR$\Blinking_LED.ewp</path>
     </project>
+    <project>
+        <path>F:\haku Files\哈酷智能-文件\STM8辅助单片机烧录\STM8 拓展板升级工程\STM8S_Project_Demo.ewp</path>
+    </project>
     <batchBuild>
         <batchDefinition>
             <name>BuildAll</name>

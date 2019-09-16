@@ -12,7 +12,7 @@
         <ByteLimit>50</ByteLimit>
     </Stack>
     <StLinkDriver>
-        <stlinkserialNo>20200287</stlinkserialNo>
+        <stlinkserialNo>30303031</stlinkserialNo>
         <stlinkfoundProbes />
         <stlinkResetStyle>0</stlinkResetStyle>
         <stlinkResetStrategy>3</stlinkResetStrategy>
@@ -20,7 +20,7 @@
         <LeaveTargetRunning>_ 0</LeaveTargetRunning>
     </StLinkDriver>
     <DebugChecksum>
-        <Checksum>3783314009</Checksum>
+        <Checksum>3874712134</Checksum>
     </DebugChecksum>
     <CodeCoverage>
         <Enabled>_ 0</Enabled>
