@@ -1,0 +1,15 @@
+"D:\IAR for ARM\arm\bin\armproc.dll" 
+
+"D:\IAR for ARM\arm\bin\armstlink2.dll" 
+
+"C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Exe\F103C8T6_Mini_Board.out" 
+
+--plugin="D:\IAR for ARM\arm\bin\armbat.dll" 
+
+--device_macro="D:\IAR for ARM\arm\config\debugger\ST\STM32F1xx.dmac" 
+
+--flash_loader="D:\IAR for ARM\arm\config\flashloader\ST\FlashSTM32F10xx8.board" 
+
+
+
+
