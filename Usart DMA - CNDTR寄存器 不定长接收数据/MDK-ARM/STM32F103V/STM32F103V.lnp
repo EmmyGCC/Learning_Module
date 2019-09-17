@@ -1,0 +1,26 @@
+--cpu Cortex-M3
+"stm32f103v\startup_stm32f103xe.o"
+"stm32f103v\gpio.o"
+"stm32f103v\main.o"
+"stm32f103v\stm32f1xx_hal_msp.o"
+"stm32f103v\stm32f1xx_it.o"
+"stm32f103v\usart.o"
+"stm32f103v\dma.o"
+"stm32f103v\system_stm32f1xx.o"
+"stm32f103v\stm32f1xx_hal_gpio.o"
+"stm32f103v\stm32f1xx_hal_tim.o"
+"stm32f103v\stm32f1xx_hal_pwr.o"
+"stm32f103v\stm32f1xx_hal_flash.o"
+"stm32f103v\stm32f1xx_hal_cortex.o"
+"stm32f103v\stm32f1xx_hal_rcc.o"
+"stm32f103v\stm32f1xx_hal_tim_ex.o"
+"stm32f103v\stm32f1xx_hal.o"
+"stm32f103v\stm32f1xx_hal_flash_ex.o"
+"stm32f103v\stm32f1xx_hal_rcc_ex.o"
+"stm32f103v\stm32f1xx_hal_gpio_ex.o"
+"stm32f103v\stm32f1xx_hal_dma.o"
+"stm32f103v\stm32f1xx_hal_uart.o"
+--library_type=microlib --strict --scatter "STM32F103V\STM32F103V.sct"
+--diag_suppress=L6329 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "STM32F103V.map" -o STM32F103V\STM32F103V.axf
