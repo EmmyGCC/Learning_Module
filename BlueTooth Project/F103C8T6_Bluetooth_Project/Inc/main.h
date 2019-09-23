@@ -52,6 +52,8 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <stdio.h>
+#include <string.h>
 
 /* USER CODE END Includes */
 

@@ -88,8 +88,9 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+    uint8_t *p_Tx_cmd = NULL;
   /* USER CODE END 1 */
+  
 
   /* MCU Configuration--------------------------------------------------------*/
 
@@ -112,19 +113,31 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
-  HAL_UART_Receive_IT(&huart3, (uint8_t *)&Data_UartRec, 1);
+  HAL_UART_Receive_IT(&huart1, (uint8_t *)&Data_Uart1Rec, 1);
+  HAL_UART_Receive_IT(&huart3, (uint8_t *)&Data_Uart3Rec, 1);
   
-  printf("Init Success...\r\n");
+  p_Tx_cmd = "Init Success...\r\n";
+  UART_Transmit_Str(&huart1,strlen((const char*)p_Tx_cmd),p_Tx_cmd);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  p_Tx_cmd = "while running...\r\n";
   while (1)
-  {
+  {/*
 	HC_05_STATE();
-	HC_05_PSWD();
+	HC_05_PSWD();*/
 	HAL_Delay(1000);
-	printf("while running...\r\n");
+    
+    if(Uart1_rx.rx_cpl)
+    {
+        Uart1_rx.rx_cpl = 0;
+        
+        printf("\r\n");
+        p_Tx_cmd = Uart1_rx.rx_buf;
+        UART_Transmit_Str(&huart1,strlen((const char*)p_Tx_cmd),p_Tx_cmd);
+    }
+    UART_Transmit_Str(&huart1,strlen((const char*)p_Tx_cmd),p_Tx_cmd);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -141,7 +154,7 @@ void SystemClock_Config(void)
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
-  /**Initializes the CPU, AHB and APB busses clocks 
+  /** Initializes the CPU, AHB and APB busses clocks 
   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
@@ -149,12 +162,12 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL6;
+  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
   }
-  /**Initializes the CPU, AHB and APB busses clocks 
+  /** Initializes the CPU, AHB and APB busses clocks 
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
@@ -163,7 +176,7 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
   {
     Error_Handler();
   }

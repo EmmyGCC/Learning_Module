@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "D:\IAR for ARM\common\bin\cspybat" -f "E:\Git_Repo\F103C8T6_Bluetooth_Project\EWARM\settings\STM32F103C8T6_TEST_Project.STM32F103C8T6_TEST_Project.general.xcl" --backend -f "E:\Git_Repo\F103C8T6_Bluetooth_Project\EWARM\settings\STM32F103C8T6_TEST_Project.STM32F103C8T6_TEST_Project.driver.xcl" 
+& "D:\IAR for ARM\common\bin\cspybat" -f "E:\Git_Repo\BlueTooth Project\F103C8T6_Bluetooth_Project\EWARM\settings\STM32F103C8T6_TEST_Project.STM32F103C8T6_TEST_Project.general.xcl" --backend -f "E:\Git_Repo\BlueTooth Project\F103C8T6_Bluetooth_Project\EWARM\settings\STM32F103C8T6_TEST_Project.STM32F103C8T6_TEST_Project.driver.xcl" 
 }
 else
 {
-& "D:\IAR for ARM\common\bin\cspybat" -f "E:\Git_Repo\F103C8T6_Bluetooth_Project\EWARM\settings\STM32F103C8T6_TEST_Project.STM32F103C8T6_TEST_Project.general.xcl" --debug_file=$debugfile --backend -f "E:\Git_Repo\F103C8T6_Bluetooth_Project\EWARM\settings\STM32F103C8T6_TEST_Project.STM32F103C8T6_TEST_Project.driver.xcl" 
+& "D:\IAR for ARM\common\bin\cspybat" -f "E:\Git_Repo\BlueTooth Project\F103C8T6_Bluetooth_Project\EWARM\settings\STM32F103C8T6_TEST_Project.STM32F103C8T6_TEST_Project.general.xcl" --debug_file=$debugfile --backend -f "E:\Git_Repo\BlueTooth Project\F103C8T6_Bluetooth_Project\EWARM\settings\STM32F103C8T6_TEST_Project.STM32F103C8T6_TEST_Project.driver.xcl" 
 }

@@ -248,11 +248,17 @@ void EXTI2_IRQHandler(void)
 void USART1_IRQHandler(void)
 {
   /* USER CODE BEGIN USART1_IRQn 0 */
-
+    uint32_t timeout = 0;
+    
   /* USER CODE END USART1_IRQn 0 */
   HAL_UART_IRQHandler(&huart1);
   /* USER CODE BEGIN USART1_IRQn 1 */
-
+  while (HAL_UART_Receive_IT(&huart1, (uint8_t *)&Data_Uart1Rec, 1) != HAL_OK) //一次处理完成之后，重新开启中断并设置RxCount为1
+  {
+	  timeout++; //超时处理
+	  if (timeout > HAL_MAX_DELAY)
+		  break;
+  }
   /* USER CODE END USART1_IRQn 1 */
 }
 
@@ -266,7 +272,7 @@ void USART3_IRQHandler(void)
   /* USER CODE END USART3_IRQn 0 */
   HAL_UART_IRQHandler(&huart3);
   /* USER CODE BEGIN USART3_IRQn 1 */
-  while (HAL_UART_Receive_IT(&huart3, (uint8_t *)&Data_UartRec, 1) != HAL_OK) //一次处理完成之后，重新开启中断并设置RxCount为1
+  while (HAL_UART_Receive_IT(&huart3, (uint8_t *)&Data_Uart3Rec, 1) != HAL_OK) //一次处理完成之后，重新开启中断并设置RxCount为1
   {
 	  timeout++; //超时处理
 	  if (timeout > HAL_MAX_DELAY)

@@ -1,19 +1,19 @@
-"E:\Git_Repo\F103C8T6_Bluetooth_Project\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio.c"
+"E:\Git_Repo\BlueTooth Project\F103C8T6_Bluetooth_Project\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -I
-E:\Git_Repo\F103C8T6_Bluetooth_Project\Drivers\STM32F1xx_HAL_Driver\Src
+E:\Git_Repo\BlueTooth Project\F103C8T6_Bluetooth_Project\Drivers\STM32F1xx_HAL_Driver\Src
 -I
-E:\Git_Repo\F103C8T6_Bluetooth_Project\EWARM/../Inc
+E:\Git_Repo\BlueTooth Project\F103C8T6_Bluetooth_Project\EWARM/../Inc
 -I
-E:\Git_Repo\F103C8T6_Bluetooth_Project\EWARM/../Drivers/STM32F1xx_HAL_Driver/Inc
+E:\Git_Repo\BlueTooth Project\F103C8T6_Bluetooth_Project\EWARM/../Drivers/STM32F1xx_HAL_Driver/Inc
 -I
-E:\Git_Repo\F103C8T6_Bluetooth_Project\EWARM/../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy
+E:\Git_Repo\BlueTooth Project\F103C8T6_Bluetooth_Project\EWARM/../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy
 -I
-E:\Git_Repo\F103C8T6_Bluetooth_Project\EWARM/../Drivers/CMSIS/Device/ST/STM32F1xx/Include
+E:\Git_Repo\BlueTooth Project\F103C8T6_Bluetooth_Project\EWARM/../Drivers/CMSIS/Device/ST/STM32F1xx/Include
 -I
-E:\Git_Repo\F103C8T6_Bluetooth_Project\EWARM/../Drivers/CMSIS/Include
+E:\Git_Repo\BlueTooth Project\F103C8T6_Bluetooth_Project\EWARM/../Drivers/CMSIS/Include
 -I
 D:\IAR for ARM\arm\CMSIS\Core\Include
 -I
@@ -23,15 +23,15 @@ D:\IAR for ARM\arm\inc
 -I
 D:\IAR for ARM\arm\inc\c
 -I
-E:\Git_Repo\F103C8T6_Bluetooth_Project\Inc
+E:\Git_Repo\BlueTooth Project\F103C8T6_Bluetooth_Project\Inc
 -I
-E:\Git_Repo\F103C8T6_Bluetooth_Project\Drivers\STM32F1xx_HAL_Driver\Inc
+E:\Git_Repo\BlueTooth Project\F103C8T6_Bluetooth_Project\Drivers\STM32F1xx_HAL_Driver\Inc
 -I
-E:\Git_Repo\F103C8T6_Bluetooth_Project\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy
+E:\Git_Repo\BlueTooth Project\F103C8T6_Bluetooth_Project\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy
 -I
-E:\Git_Repo\F103C8T6_Bluetooth_Project\Drivers\CMSIS\Device\ST\STM32F1xx\Include
+E:\Git_Repo\BlueTooth Project\F103C8T6_Bluetooth_Project\Drivers\CMSIS\Device\ST\STM32F1xx\Include
 -I
-E:\Git_Repo\F103C8T6_Bluetooth_Project\Drivers\CMSIS\Include
+E:\Git_Repo\BlueTooth Project\F103C8T6_Bluetooth_Project\Drivers\CMSIS\Include
 -I
 D:\IAR for ARM\arm\CMSIS\Core\Include
 -I

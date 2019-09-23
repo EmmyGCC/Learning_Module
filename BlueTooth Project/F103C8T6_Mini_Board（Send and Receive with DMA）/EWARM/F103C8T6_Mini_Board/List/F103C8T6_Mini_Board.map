@@ -1,44 +1,69 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.30.2.160/W32 for ARM                  17/Sep/2019  12:05:41
+# IAR ELF Linker V8.30.2.160/W32 for ARM                  23/Sep/2019  16:57:03
 # Copyright 2007-2018 IAR Systems AB.
 #
 #    Output file  =  
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Exe\F103C8T6_Mini_Board.out
+#        E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive
+#        with DMA£©\EWARM\F103C8T6_Mini_Board\Exe\F103C8T6_Mini_Board.out
 #    Map file     =  
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\List\F103C8T6_Mini_Board.map
+#        E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive
+#        with DMA£©\EWARM\F103C8T6_Mini_Board\List\F103C8T6_Mini_Board.map
 #    Command line =  
-#        -f C:\Users\ADMINI~1\AppData\Local\Temp\EW4BA3.tmp
-#        (C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Obj\dma.o
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Obj\gpio.o
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Obj\main.o
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Obj\startup_stm32f103xb.o
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal.o
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_cortex.o
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_dma.o
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_exti.o
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_flash.o
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_flash_ex.o
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_gpio.o
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_gpio_ex.o
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_msp.o
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_pwr.o
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_rcc.o
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_rcc_ex.o
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_tim.o
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_tim_ex.o
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_uart.o
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_it.o
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Obj\system_stm32f1xx.o
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Obj\usart.o
-#        --redirect _Printf=_PrintfFull --redirect _Scanf=_ScanfFull
-#        --no_out_extension -o
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Exe\F103C8T6_Mini_Board.out
-#        --map
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\List\F103C8T6_Mini_Board.map
-#        --config
-#        C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM/stm32f103xb_flash.icf
-#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#        -f C:\Users\ADMINI~1\AppData\Local\Temp\EWE0A1.tmp
+#        ("E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive
+#        with DMA£©\EWARM\F103C8T6_Mini_Board\Obj\dma.o"
+#        "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive
+#        with DMA£©\EWARM\F103C8T6_Mini_Board\Obj\gpio.o"
+#        "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive
+#        with DMA£©\EWARM\F103C8T6_Mini_Board\Obj\main.o"
+#        "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive
+#        with DMA£©\EWARM\F103C8T6_Mini_Board\Obj\startup_stm32f103xb.o"
+#        "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive
+#        with DMA£©\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal.o"
+#        "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive
+#        with DMA£©\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_cortex.o"
+#        "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive
+#        with DMA£©\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_dma.o"
+#        "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive
+#        with DMA£©\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_exti.o"
+#        "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive
+#        with DMA£©\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_flash.o"
+#        "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive
+#        with DMA£©\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_flash_ex.o"
+#        "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive
+#        with DMA£©\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_gpio.o"
+#        "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive
+#        with DMA£©\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_gpio_ex.o"
+#        "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive
+#        with DMA£©\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_msp.o"
+#        "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive
+#        with DMA£©\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_pwr.o"
+#        "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive
+#        with DMA£©\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_rcc.o"
+#        "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive
+#        with DMA£©\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_rcc_ex.o"
+#        "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive
+#        with DMA£©\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_tim.o"
+#        "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive
+#        with DMA£©\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_tim_ex.o"
+#        "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive
+#        with DMA£©\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_uart.o"
+#        "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive
+#        with DMA£©\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_it.o"
+#        "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive
+#        with DMA£©\EWARM\F103C8T6_Mini_Board\Obj\system_stm32f1xx.o"
+#        "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive
+#        with DMA£©\EWARM\F103C8T6_Mini_Board\Obj\usart.o" --redirect
+#        _Printf=_PrintfFull --redirect _Scanf=_ScanfFull --no_out_extension -o
+#        "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive
+#        with DMA£©\EWARM\F103C8T6_Mini_Board\Exe\F103C8T6_Mini_Board.out"
+#        --map "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and
+#        Receive with
+#        DMA£©\EWARM\F103C8T6_Mini_Board\List\F103C8T6_Mini_Board.map"
+#        --config "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and
+#        Receive with DMA£©\EWARM/stm32f103xb_flash.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
 #
 ###############################################################################
 
@@ -219,7 +244,7 @@ command line/config:
     -------------------------------------------------
     Total:
 
-C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Obj: [1]
+E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive with DMA£©\EWARM\F103C8T6_Mini_Board\Obj: [1]
     dma.o                        64
     gpio.o                      232
     main.o                      194
@@ -404,7 +429,7 @@ uwTickFreq              0x2000'0000    0x1  Data  Gb  stm32f1xx_hal.o [1]
 uwTickPrio              0x2000'0008    0x4  Data  Gb  stm32f1xx_hal.o [1]
 
 
-[1] = C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\F103C8T6_Mini_Board\Obj
+[1] = E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board£¨Send and Receive with DMA£©\EWARM\F103C8T6_Mini_Board\Obj
 [2] = dl7M_tlf.a
 [3] = rt7M_tl.a
 [4] = shb_l.a

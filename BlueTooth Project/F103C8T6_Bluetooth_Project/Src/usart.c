@@ -4,35 +4,15 @@
   * Description        : This file provides code for the configuration
   *                      of the USART instances.
   ******************************************************************************
-  ** This notice applies to any and all portions of this file
-  * that are not between comment pairs USER CODE BEGIN and
-  * USER CODE END. Other portions of this file, whether 
-  * inserted by the user or by software development tools
-  * are owned by their respective copyright owners.
+  * @attention
   *
-  * COPYRIGHT(c) 2019 STMicroelectronics
+  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * Redistribution and use in source and binary forms, with or without modification,
-  * are permitted provided that the following conditions are met:
-  *   1. Redistributions of source code must retain the above copyright notice,
-  *      this list of conditions and the following disclaimer.
-  *   2. Redistributions in binary form must reproduce the above copyright notice,
-  *      this list of conditions and the following disclaimer in the documentation
-  *      and/or other materials provided with the distribution.
-  *   3. Neither the name of STMicroelectronics nor the names of its contributors
-  *      may be used to endorse or promote products derived from this software
-  *      without specific prior written permission.
-  *
-  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  * This software component is licensed by ST under BSD 3-Clause license,
+  * the "License"; You may not use this file except in compliance with the
+  * License. You may obtain a copy of the License at:
+  *                        opensource.org/licenses/BSD-3-Clause
   *
   ******************************************************************************
   */
@@ -41,13 +21,14 @@
 #include "usart.h"
 
 /* USER CODE BEGIN 0 */
-#include "stdlib.h"
-#include "string.h"
 
 
-uint8_t Data_UartRec;         //串口3中断接收一个字符
-uint8_t UART_RX_BUF[50];
-UART_RX_TYPE Uart_rx;
+uint8_t Data_Uart3Rec;         //串口3中断接收一个字符
+uint8_t Data_Uart1Rec;
+
+
+UART_RX_TYPE Uart1_rx;
+UART_RX_TYPE Uart3_rx;
 /* USER CODE END 0 */
 
 UART_HandleTypeDef huart1;
@@ -66,7 +47,7 @@ void MX_USART1_UART_Init(void)
   huart1.Init.Mode = UART_MODE_TX_RX;
   huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
   huart1.Init.OverSampling = UART_OVERSAMPLING_16;
-  if (HAL_UART_Init(&huart1) != HAL_OK)
+  if (HAL_HalfDuplex_Init(&huart1) != HAL_OK)
   {
     Error_Handler();
   }
@@ -106,17 +87,11 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
   
     __HAL_RCC_GPIOA_CLK_ENABLE();
     /**USART1 GPIO Configuration    
-    PA9     ------> USART1_TX
-    PA10     ------> USART1_RX 
+    PA9     ------> USART1_TX 
     */
     GPIO_InitStruct.Pin = GPIO_PIN_9;
-    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_OD;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
-    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-
-    GPIO_InitStruct.Pin = GPIO_PIN_10;
-    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
     /* USART1 interrupt Init */
@@ -170,10 +145,9 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
     __HAL_RCC_USART1_CLK_DISABLE();
   
     /**USART1 GPIO Configuration    
-    PA9     ------> USART1_TX
-    PA10     ------> USART1_RX 
+    PA9     ------> USART1_TX 
     */
-    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_9|GPIO_PIN_10);
+    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_9);
 
     /* USART1 interrupt Deinit */
     HAL_NVIC_DisableIRQ(USART1_IRQn);
@@ -206,41 +180,57 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 /* USER CODE BEGIN 1 */
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-  if(huart->Instance == USART3)
-  {
-	Uart_rx.rx_buf[Uart_rx.rx_count] = Data_UartRec;
-	
-	if((Uart_rx.rx_buf[Uart_rx.rx_count-1] == 'O') && (Uart_rx.rx_buf[Uart_rx.rx_count] == 'K'))
-	{
-	  Uart_rx.rx_buf[++Uart_rx.rx_count] = '\0';
-	  Uart_rx.rx_size = Uart_rx.rx_count;
-	  Uart_rx.rx_count = 0;
-	  Uart_rx.rx_cpl = 1;
-	}
-	else
-	  Uart_rx.rx_count++;
-  }
+    if(huart->Instance == USART1)
+    {
+        Uart1_rx.rx_buf[Uart1_rx.rx_count] = Data_Uart1Rec;
+
+        if((Uart1_rx.rx_buf[Uart1_rx.rx_count-1] == 'O') && (Uart1_rx.rx_buf[Uart1_rx.rx_count] == 'K'))
+        {
+            Uart1_rx.rx_buf[++Uart1_rx.rx_count] = '\0';
+            Uart1_rx.rx_size = Uart1_rx.rx_count;
+            Uart1_rx.rx_count = 0;
+            Uart1_rx.rx_cpl = 1;
+        }
+        else
+            Uart1_rx.rx_count++;
+    }
+    if(huart->Instance == USART3)
+    {
+        Uart3_rx.rx_buf[Uart3_rx.rx_count] = Data_Uart3Rec;
+        
+        if((Uart3_rx.rx_buf[Uart3_rx.rx_count-1] == 'O') && (Uart3_rx.rx_buf[Uart3_rx.rx_count] == 'K'))
+        {
+            Uart3_rx.rx_buf[++Uart3_rx.rx_count] = '\0';
+            Uart3_rx.rx_size = Uart3_rx.rx_count;
+            Uart3_rx.rx_count = 0;
+            Uart3_rx.rx_cpl = 1;
+        }
+        else
+            Uart3_rx.rx_count++;
+    }
 }
 
 void UART_Transmit_Str(UART_HandleTypeDef *huart,uint8_t tx_len,uint8_t *p_data)
 {
-  while(tx_len--)
-  {
-	HAL_UART_Transmit(huart, p_data, 1, 0xFFFF);
-	p_data++;
-  }
-  
+    if(HAL_OK == HAL_HalfDuplex_EnableTransmitter(huart))
+    {
+        while(tx_len--)
+        {
+            HAL_UART_Transmit(huart, p_data, 1, 0xFFFF);
+            p_data++;
+        }
+    }
 }
 
 
 
 static void Printf_BL_Info(void)
 {
-  if(memcmp(&Uart_rx.rx_buf[Uart_rx.rx_size-2],"OK",2) == 0)
+  if(memcmp(&Uart3_rx.rx_buf[Uart3_rx.rx_size-2],"OK",2) == 0)
   {
-	//printf("%s\n",(const char*)Uart_rx.rx_buf);
+	//printf("%s\n",(const char*)Uart3_rx.rx_buf);
 	//从回复的第一段中提取出':'后面的内容
-	const char *temp = strtok((char *)Uart_rx.rx_buf,"\r\n");
+	const char *temp = strtok((char *)Uart3_rx.rx_buf,"\r\n");
 	if(temp != NULL)
 	{
 	  char *p_ret = strchr(temp,':');
@@ -256,9 +246,9 @@ void HC_05_STATE(void)
   UART_Transmit_Str(&huart3,strlen((const char*)p_Tx_cmd),p_Tx_cmd);
   HAL_Delay(70);
   
-  if(Uart_rx.rx_cpl)
+  if(Uart3_rx.rx_cpl)
   {
-	Uart_rx.rx_cpl = 0;
+	Uart3_rx.rx_cpl = 0;
 	
 	printf("BL's STATE:");
 	Printf_BL_Info();
@@ -272,9 +262,9 @@ void HC_05_PSWD(void)
   UART_Transmit_Str(&huart3,strlen((const char*)p_Tx_cmd),p_Tx_cmd);
   HAL_Delay(70);
   
-  if(Uart_rx.rx_cpl)
+  if(Uart3_rx.rx_cpl)
   {
-	Uart_rx.rx_cpl = 0;
+	Uart3_rx.rx_cpl = 0;
 	
 	printf("BL's PSWD:");
 	Printf_BL_Info();

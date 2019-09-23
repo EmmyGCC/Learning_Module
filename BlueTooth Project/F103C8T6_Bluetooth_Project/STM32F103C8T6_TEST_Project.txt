@@ -1,6 +1,6 @@
 Configuration	STM32F103C8T6_TEST_Project
-STM32CubeMX 	5.0.1
-Date	01/19/2019
+STM32CubeMX 	5.3.0
+Date	09/23/2019
 MCU	STM32F103C8Tx
 
 
@@ -13,8 +13,7 @@ RCC	Crystal/Ceramic Resonator	RCC_OSC32_OUT	PC15-OSC32_OUT
 SYS	Serial Wire	SYS_JTCK-SWCLK	PA14
 SYS	Serial Wire	SYS_JTMS-SWDIO	PA13
 SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
-USART1	Asynchronous	USART1_RX	PA10
-USART1	Asynchronous	USART1_TX	PA9
+USART1	Single Wire (Half-Duplex)	USART1_TX	PA9
 USART3	Asynchronous	USART3_RX	PB11
 USART3	Asynchronous	USART3_TX	PB10
 
@@ -32,7 +31,6 @@ Pin Nb	PINs	FUNCTIONs	LABELs
 21	PB10	USART3_TX	BL_TX
 22	PB11	USART3_RX	BL_RX
 30	PA9	USART1_TX	
-31	PA10	USART1_RX	
 34	PA13	SYS_JTMS-SWDIO	
 37	PA14	SYS_JTCK-SWCLK	
 PERIPHERALS	MODES	FUNCTIONS	PINS
@@ -43,8 +41,7 @@ RCC	Crystal/Ceramic Resonator	RCC_OSC32_OUT	PC15-OSC32_OUT
 SYS	Serial Wire	SYS_JTCK-SWCLK	PA14
 SYS	Serial Wire	SYS_JTMS-SWDIO	PA13
 SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
-USART1	Asynchronous	USART1_RX	PA10
-USART1	Asynchronous	USART1_TX	PA9
+USART1	Single Wire (Half-Duplex)	USART1_TX	PA9
 USART3	Asynchronous	USART3_RX	PB11
 USART3	Asynchronous	USART3_TX	PB10
 
@@ -62,7 +59,6 @@ Pin Nb	PINs	FUNCTIONs	LABELs
 21	PB10	USART3_TX	BL_TX
 22	PB11	USART3_RX	BL_RX
 30	PA9	USART1_TX	
-31	PA10	USART1_RX	
 34	PA13	SYS_JTMS-SWDIO	
 37	PA14	SYS_JTCK-SWCLK	
 
@@ -72,13 +68,13 @@ SOFTWARE PROJECT
 
 Project Settings : 
 Project Name : STM32F103C8T6_TEST_Project
-Project Folder : C:\Users\Administrator\Desktop\STM32F103C8T6_TEST_Project
+Project Folder : C:\Users\Administrator\Desktop\F103C8T6_Bluetooth_Project
 Toolchain / IDE : EWARM V8
-Firmware Package Name and Version : STM32Cube FW_F1 V1.7.0
+Firmware Package Name and Version : STM32Cube FW_F1 V1.8.0
 
 
 Code Generation Settings : 
-STM32Cube Firmware Library Package : Copy all used libraries into the project folder
+STM32Cube MCU packages and embedded software packs : Copy all used libraries into the project folder
 Generate peripheral initialization as a pair of '.c/.h' files per peripheral : Yes
 Backup previously generated files when re-generating : No
 Delete previously generated files when not re-generated : Yes

@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"D:\IAR for ARM\common\bin\cspybat" -f "C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\settings\F103C8T6_Mini_Board.F103C8T6_Mini_Board.general.xcl" --backend -f "C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\settings\F103C8T6_Mini_Board.F103C8T6_Mini_Board.driver.xcl" 
+"D:\IAR for ARM\common\bin\cspybat" -f "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\settings\F103C8T6_Mini_Board.F103C8T6_Mini_Board.general.xcl" --backend -f "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\settings\F103C8T6_Mini_Board.F103C8T6_Mini_Board.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"D:\IAR for ARM\common\bin\cspybat" -f "C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\settings\F103C8T6_Mini_Board.F103C8T6_Mini_Board.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\settings\F103C8T6_Mini_Board.F103C8T6_Mini_Board.driver.xcl" 
+"D:\IAR for ARM\common\bin\cspybat" -f "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\settings\F103C8T6_Mini_Board.F103C8T6_Mini_Board.general.xcl" "--debug_file=%~1" --backend -f "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\settings\F103C8T6_Mini_Board.F103C8T6_Mini_Board.driver.xcl" 
 
 @echo off 
 :end

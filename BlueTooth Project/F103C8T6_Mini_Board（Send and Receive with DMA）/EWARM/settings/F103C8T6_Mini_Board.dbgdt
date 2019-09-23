@@ -862,7 +862,7 @@
                 <expressions>
                     <item>Uart3_Rx_Buf</item>
                     <item>Uart1_Rx_Buf</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>

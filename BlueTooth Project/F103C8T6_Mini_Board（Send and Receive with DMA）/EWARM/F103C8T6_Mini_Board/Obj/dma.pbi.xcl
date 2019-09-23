@@ -1,11 +1,11 @@
-"C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\Src\dma.c"
+"E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\Src\dma.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -I
-C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\Src
+E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\Src
 -I
-C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM/../Inc
+E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM/../Inc
 -I
 F:/STM32Cube/STM32Cube_FW_F1_V1.8.0/Drivers/STM32F1xx_HAL_Driver/Inc
 -I
@@ -19,7 +19,7 @@ D:\IAR for ARM\arm\inc
 -I
 D:\IAR for ARM\arm\inc\c
 -I
-C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\Inc
+E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\Inc
 -I
 F:\STM32Cube\STM32Cube_FW_F1_V1.8.0\Drivers\STM32F1xx_HAL_Driver\Inc
 -I

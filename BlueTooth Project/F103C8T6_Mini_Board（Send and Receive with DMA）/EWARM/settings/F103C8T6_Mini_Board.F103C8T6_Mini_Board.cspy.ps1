@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "D:\IAR for ARM\common\bin\cspybat" -f "C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\settings\F103C8T6_Mini_Board.F103C8T6_Mini_Board.general.xcl" --backend -f "C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\settings\F103C8T6_Mini_Board.F103C8T6_Mini_Board.driver.xcl" 
+& "D:\IAR for ARM\common\bin\cspybat" -f "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\settings\F103C8T6_Mini_Board.F103C8T6_Mini_Board.general.xcl" --backend -f "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\settings\F103C8T6_Mini_Board.F103C8T6_Mini_Board.driver.xcl" 
 }
 else
 {
-& "D:\IAR for ARM\common\bin\cspybat" -f "C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\settings\F103C8T6_Mini_Board.F103C8T6_Mini_Board.general.xcl" --debug_file=$debugfile --backend -f "C:\Users\Administrator\Desktop\F103C8T6_Mini_Board\EWARM\settings\F103C8T6_Mini_Board.F103C8T6_Mini_Board.driver.xcl" 
+& "D:\IAR for ARM\common\bin\cspybat" -f "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\settings\F103C8T6_Mini_Board.F103C8T6_Mini_Board.general.xcl" --debug_file=$debugfile --backend -f "E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\settings\F103C8T6_Mini_Board.F103C8T6_Mini_Board.driver.xcl" 
 }
