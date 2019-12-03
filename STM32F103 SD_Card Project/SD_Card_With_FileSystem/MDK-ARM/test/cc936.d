@@ -1,0 +1,33 @@
+test\cc936.o: ../Middlewares/Third_Party/FatFs/src/option/cc936.c
+test\cc936.o: ../Middlewares/Third_Party/FatFs/src/option/../ff.h
+test\cc936.o: ../Middlewares/Third_Party/FatFs/src/option/../integer.h
+test\cc936.o: ../Inc/ffconf.h
+test\cc936.o: ../Inc/main.h
+test\cc936.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
+test\cc936.o: ../Inc/stm32f1xx_hal_conf.h
+test\cc936.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
+test\cc936.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
+test\cc936.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
+test\cc936.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h
+test\cc936.o: ../Drivers/CMSIS/Include/core_cm3.h
+test\cc936.o: D:\Keil ARM\ARM\ARMCC\Bin\..\include\stdint.h
+test\cc936.o: ../Drivers/CMSIS/Include/cmsis_version.h
+test\cc936.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+test\cc936.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+test\cc936.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
+test\cc936.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
+test\cc936.o: D:\Keil ARM\ARM\ARMCC\Bin\..\include\stddef.h
+test\cc936.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
+test\cc936.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
+test\cc936.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
+test\cc936.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
+test\cc936.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
+test\cc936.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+test\cc936.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
+test\cc936.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
+test\cc936.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+test\cc936.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
+test\cc936.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h
+test\cc936.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h
+test\cc936.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+test\cc936.o: ../Inc/bsp_driver_sd.h
