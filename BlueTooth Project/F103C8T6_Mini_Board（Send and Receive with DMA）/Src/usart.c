@@ -258,7 +258,7 @@ void Uart_rxIT_process(UART_HandleTypeDef *huart)
         HAL_UART_DMAStop(huart);
         
         if (huart->Instance == USART1)
-        {
+        {   //DMA channel x number of data register (DMA_CNDTRx)    每次传输后此值会递减，此处少了多少则表示传输了多少
             UART1_RX_BUF()->rx_len = sizeof(UART1_RX_BUF()->rx_data) - (huart->hdmarx->Instance->CNDTR);
             
             if (strncmp((const char *)&(UART1_RX_BUF()->rx_data[UART1_RX_BUF()->rx_len - 2]), "\r\n", 2) == 0)

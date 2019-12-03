@@ -2,6 +2,10 @@
 E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\F103C8T6_Mini_Board\Obj\dma.pbi
 E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\F103C8T6_Mini_Board\Obj\gpio.pbi
 E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\F103C8T6_Mini_Board\Obj\main.pbi
+E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_msp.pbi
+E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_it.pbi
+E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\F103C8T6_Mini_Board\Obj\usart.pbi
+E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\F103C8T6_Mini_Board\Obj\system_stm32f1xx.pbi
 E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal.pbi
 E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_cortex.pbi
 E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_dma.pbi
@@ -10,13 +14,9 @@ E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）
 E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_flash_ex.pbi
 E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_gpio.pbi
 E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_gpio_ex.pbi
-E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_msp.pbi
 E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_pwr.pbi
 E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_rcc.pbi
 E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_rcc_ex.pbi
 E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_tim.pbi
 E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_tim_ex.pbi
 E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_hal_uart.pbi
-E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\F103C8T6_Mini_Board\Obj\stm32f1xx_it.pbi
-E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\F103C8T6_Mini_Board\Obj\system_stm32f1xx.pbi
-E:\Git_Repo\BlueTooth Project\F103C8T6_Mini_Board（Send and Receive with DMA）\EWARM\F103C8T6_Mini_Board\Obj\usart.pbi
