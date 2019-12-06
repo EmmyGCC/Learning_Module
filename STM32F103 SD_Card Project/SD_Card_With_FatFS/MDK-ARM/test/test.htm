@@ -3,7 +3,7 @@
 <title>Static Call Graph - [test\test.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image test\test.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Thu Dec 05 15:54:45 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Thu Dec 05 16:58:08 2019
 <BR><P>
 <H3>Maximum Stack Usage =       1352 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -709,12 +709,12 @@ Global Symbols
 <P><STRONG><a name="[91]"></a>HAL_UART_IRQHandler</STRONG> (Thumb, 266 bytes, Stack size 16 bytes, stm32f1xx_hal_uart.o(i.HAL_UART_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = HAL_UART_IRQHandler &rArr; HAL_DMA_Abort_IT
 </UL>
-<BR>[Calls]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_TxCpltCallback
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_ErrorCallback
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Transmit_IT
+<BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Transmit_IT
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Receive_IT
 <LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_EndRxTransfer
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort_IT
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_TxCpltCallback
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_ErrorCallback
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART1_IRQHandler
 </UL>
@@ -816,12 +816,12 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[74]"></a>SDIO_GetResponse</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f1xx_ll_sdmmc.o(i.SDIO_GetResponse))
-<BR><BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp6
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
-<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_GetCardState
+<BR><BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_GetCardState
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ConfigWideBusOperation
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_PowerON
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_InitCard
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp6
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
 </UL>
 
 <P><STRONG><a name="[3b]"></a>SDIO_IRQHandler</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f1xx_it.o(i.SDIO_IRQHandler))
@@ -881,8 +881,8 @@ Global Symbols
 <P><STRONG><a name="[76]"></a>SDMMC_CmdAppCommand</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, stm32f1xx_ll_sdmmc.o(i.SDMMC_CmdAppCommand))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SDMMC_CmdAppCommand &rArr; SDMMC_GetCmdResp1
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ConfigWideBusOperation
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_PowerON
@@ -892,8 +892,8 @@ Global Symbols
 <P><STRONG><a name="[a2]"></a>SDMMC_CmdAppOperCommand</STRONG> (Thumb, 48 bytes, Stack size 32 bytes, stm32f1xx_ll_sdmmc.o(i.SDMMC_CmdAppOperCommand))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = SDMMC_CmdAppOperCommand
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp3
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp3
 </UL>
 <BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_PowerON
 </UL>
@@ -901,8 +901,8 @@ Global Symbols
 <P><STRONG><a name="[89]"></a>SDMMC_CmdBlockLength</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, stm32f1xx_ll_sdmmc.o(i.SDMMC_CmdBlockLength))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SDMMC_CmdBlockLength &rArr; SDMMC_GetCmdResp1
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_WriteBlocks
 <LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ReadBlocks
@@ -912,8 +912,8 @@ Global Symbols
 <P><STRONG><a name="[77]"></a>SDMMC_CmdBusWidth</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, stm32f1xx_ll_sdmmc.o(i.SDMMC_CmdBusWidth))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SDMMC_CmdBusWidth &rArr; SDMMC_GetCmdResp1
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ConfigWideBusOperation
 </UL>
@@ -937,8 +937,8 @@ Global Symbols
 <P><STRONG><a name="[8b]"></a>SDMMC_CmdReadMultiBlock</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, stm32f1xx_ll_sdmmc.o(i.SDMMC_CmdReadMultiBlock))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SDMMC_CmdReadMultiBlock &rArr; SDMMC_GetCmdResp1
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ReadBlocks
 </UL>
@@ -946,8 +946,8 @@ Global Symbols
 <P><STRONG><a name="[8c]"></a>SDMMC_CmdReadSingleBlock</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, stm32f1xx_ll_sdmmc.o(i.SDMMC_CmdReadSingleBlock))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SDMMC_CmdReadSingleBlock &rArr; SDMMC_GetCmdResp1
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ReadBlocks
 </UL>
@@ -955,8 +955,8 @@ Global Symbols
 <P><STRONG><a name="[a6]"></a>SDMMC_CmdSelDesel</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, stm32f1xx_ll_sdmmc.o(i.SDMMC_CmdSelDesel))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SDMMC_CmdSelDesel &rArr; SDMMC_GetCmdResp1
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_InitCard
 </UL>
@@ -964,8 +964,8 @@ Global Symbols
 <P><STRONG><a name="[a7]"></a>SDMMC_CmdSendCID</STRONG> (Thumb, 44 bytes, Stack size 32 bytes, stm32f1xx_ll_sdmmc.o(i.SDMMC_CmdSendCID))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = SDMMC_CmdSendCID
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp2
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_InitCard
 </UL>
@@ -973,8 +973,8 @@ Global Symbols
 <P><STRONG><a name="[a9]"></a>SDMMC_CmdSendCSD</STRONG> (Thumb, 44 bytes, Stack size 32 bytes, stm32f1xx_ll_sdmmc.o(i.SDMMC_CmdSendCSD))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = SDMMC_CmdSendCSD
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp2
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_InitCard
 </UL>
@@ -982,8 +982,8 @@ Global Symbols
 <P><STRONG><a name="[aa]"></a>SDMMC_CmdSendSCR</STRONG> (Thumb, 48 bytes, Stack size 32 bytes, stm32f1xx_ll_sdmmc.o(i.SDMMC_CmdSendSCR))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SDMMC_CmdSendSCR &rArr; SDMMC_GetCmdResp1
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_FindSCR
 </UL>
@@ -991,8 +991,8 @@ Global Symbols
 <P><STRONG><a name="[79]"></a>SDMMC_CmdSendStatus</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, stm32f1xx_ll_sdmmc.o(i.SDMMC_CmdSendStatus))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SDMMC_CmdSendStatus &rArr; SDMMC_GetCmdResp1
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_GetCardState
 </UL>
@@ -1000,8 +1000,8 @@ Global Symbols
 <P><STRONG><a name="[ab]"></a>SDMMC_CmdSetRelAdd</STRONG> (Thumb, 48 bytes, Stack size 32 bytes, stm32f1xx_ll_sdmmc.o(i.SDMMC_CmdSetRelAdd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = SDMMC_CmdSetRelAdd &rArr; SDMMC_GetCmdResp6
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp6
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp6
 </UL>
 <BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_InitCard
 </UL>
@@ -1009,8 +1009,8 @@ Global Symbols
 <P><STRONG><a name="[7c]"></a>SDMMC_CmdStopTransfer</STRONG> (Thumb, 46 bytes, Stack size 32 bytes, stm32f1xx_ll_sdmmc.o(i.SDMMC_CmdStopTransfer))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SDMMC_CmdStopTransfer &rArr; SDMMC_GetCmdResp1
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_WriteBlocks
 <LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ReadBlocks
@@ -1022,8 +1022,8 @@ Global Symbols
 <P><STRONG><a name="[8f]"></a>SDMMC_CmdWriteMultiBlock</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, stm32f1xx_ll_sdmmc.o(i.SDMMC_CmdWriteMultiBlock))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SDMMC_CmdWriteMultiBlock &rArr; SDMMC_GetCmdResp1
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_WriteBlocks
 </UL>
@@ -1031,8 +1031,8 @@ Global Symbols
 <P><STRONG><a name="[90]"></a>SDMMC_CmdWriteSingleBlock</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, stm32f1xx_ll_sdmmc.o(i.SDMMC_CmdWriteSingleBlock))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SDMMC_CmdWriteSingleBlock &rArr; SDMMC_GetCmdResp1
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDIO_SendCommand
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_WriteBlocks
 </UL>
