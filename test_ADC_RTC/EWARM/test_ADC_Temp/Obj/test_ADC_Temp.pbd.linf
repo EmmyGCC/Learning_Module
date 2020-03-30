@@ -4,6 +4,11 @@ E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\dma.pbi
 E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\gpio.pbi
 E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\main.pbi
 E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\rtc.pbi
+E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\stm32f0xx_hal_msp.pbi
+E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\stm32f0xx_it.pbi
+E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\tim.pbi
+E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\usart.pbi
+E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\system_stm32f0xx.pbi
 E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\stm32f0xx_hal.pbi
 E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\stm32f0xx_hal_adc.pbi
 E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\stm32f0xx_hal_adc_ex.pbi
@@ -14,7 +19,6 @@ E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\stm32f0xx_hal_flash_ex.pbi
 E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\stm32f0xx_hal_gpio.pbi
 E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\stm32f0xx_hal_i2c.pbi
 E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\stm32f0xx_hal_i2c_ex.pbi
-E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\stm32f0xx_hal_msp.pbi
 E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\stm32f0xx_hal_pwr.pbi
 E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\stm32f0xx_hal_pwr_ex.pbi
 E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\stm32f0xx_hal_rcc.pbi
@@ -25,7 +29,3 @@ E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\stm32f0xx_hal_tim.pbi
 E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\stm32f0xx_hal_tim_ex.pbi
 E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\stm32f0xx_hal_uart.pbi
 E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\stm32f0xx_hal_uart_ex.pbi
-E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\stm32f0xx_it.pbi
-E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\system_stm32f0xx.pbi
-E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\tim.pbi
-E:\Git_Repo\test_ADC_RTC\EWARM\test_ADC_Temp\Obj\usart.pbi

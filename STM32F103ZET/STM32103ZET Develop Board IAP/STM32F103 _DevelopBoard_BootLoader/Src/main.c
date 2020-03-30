@@ -102,6 +102,8 @@ int main(void)
   {
       if (HAL_GPIO_ReadPin(KEY1_GPIO_Port, KEY1_Pin) == GPIO_PIN_RESET)
       {
+          /*因为用户程序开始位置(USER_FLASH_FIRST_PAGE_ADDRESS处)的前4个字节存放的是堆栈的地址，堆栈地址必定是指向RAM空间的，
+          而STM32的RAM空间起始地址为0x20000000*/
           if(((*(__IO uint32_t*)USER_FLASH_FIRST_PAGE_ADDRESS) & 0x2FFE0000 ) == 0x20000000)
           {
               /* Jump to user application ** +4为PC指针所在处** */
