@@ -22,68 +22,19 @@ Dialog DLL:      TCM.DLL V1.36.5.0
  
 <h2>Project:</h2>
 C:\Users\Administrator\Desktop\F103ZET6_LCD_Pro\MDK-ARM\F103ZET6_LCD_Pro.uvprojx
-Project File Date:  04/01/2020
+Project File Date:  04/02/2020
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\Keil ARM\ARM\ARMCC\Bin'
 Build target 'F103ZET6_LCD_Pro'
 compiling snake.c...
-..\User\src\snake.c(101): warning:  #223-D: function "system_adc_read_fast" declared implicitly
-        system_adc_read_fast(adc_addr, ADC_SAMPLE_TIMES, 8);
-..\User\src\snake.c(117): warning:  #223-D: function "GPIO_INPUT_GET" declared implicitly
-        if( GPIO_INPUT_GET(GPIO_ID_PIN(5)) == 0 )                       // 读取GPIO_5电平,按下为方向上
-..\User\src\snake.c(117): warning:  #223-D: function "GPIO_ID_PIN" declared implicitly
-        if( GPIO_INPUT_GET(GPIO_ID_PIN(5)) == 0 )                       // 读取GPIO_5电平,按下为方向上
-..\User\src\snake.c(121): warning:  #223-D: function "GPIO_INPUT_GET" declared implicitly
-        if( GPIO_INPUT_GET(GPIO_ID_PIN(13)) == 0 )                      // 读取GPIO_13电平,按下为选择Level1
-..\User\src\snake.c(121): warning:  #223-D: function "GPIO_ID_PIN" declared implicitly
-        if( GPIO_INPUT_GET(GPIO_ID_PIN(13)) == 0 )                      // 读取GPIO_13电平,按下为选择Level1
-..\User\src\snake.c(131): warning:  #223-D: function "GPIO_INPUT_GET" declared implicitly
-        if( GPIO_INPUT_GET(GPIO_ID_PIN(0)) == 0 )                       // 读取GPIO_0电平,按下为方向上
-..\User\src\snake.c(131): warning:  #223-D: function "GPIO_ID_PIN" declared implicitly
-        if( GPIO_INPUT_GET(GPIO_ID_PIN(0)) == 0 )                       // 读取GPIO_0电平,按下为方向上
-..\User\src\snake.c(135): warning:  #223-D: function "GPIO_INPUT_GET" declared implicitly
-        if( GPIO_INPUT_GET(GPIO_ID_PIN(5)) == 0 )                       // 读取GPIO_5电平,按下为方向上
-..\User\src\snake.c(135): warning:  #223-D: function "GPIO_ID_PIN" declared implicitly
-        if( GPIO_INPUT_GET(GPIO_ID_PIN(5)) == 0 )                       // 读取GPIO_5电平,按下为方向上
-..\User\src\snake.c(139): warning:  #223-D: function "GPIO_INPUT_GET" declared implicitly
-        if( GPIO_INPUT_GET(GPIO_ID_PIN(12)) == 0 )                      // 读取GPIO_12电平,按下为选择Level1
-..\User\src\snake.c(139): warning:  #223-D: function "GPIO_ID_PIN" declared implicitly
-        if( GPIO_INPUT_GET(GPIO_ID_PIN(12)) == 0 )                      // 读取GPIO_12电平,按下为选择Level1
-..\User\src\snake.c(143): warning:  #223-D: function "GPIO_INPUT_GET" declared implicitly
-        if( GPIO_INPUT_GET(GPIO_ID_PIN(13)) == 0 )                      // 读取GPIO_13电平,按下为选择Level1
-..\User\src\snake.c(143): warning:  #223-D: function "GPIO_ID_PIN" declared implicitly
-        if( GPIO_INPUT_GET(GPIO_ID_PIN(13)) == 0 )                      // 读取GPIO_13电平,按下为选择Level1
-..\User\src\snake.c(164): error:  #20: identifier "Map" is undefined
-        Map[p_tail->x][p_tail->y] = 0;                          //oled中对应尾结点的像素点
-..\User\src\snake.c(237): error:  #20: identifier "Map" is undefined
-                        if (Map[x_value][y_value] == 0)
-..\User\src\snake.c(251): error:  #20: identifier "BORDER_LEFT_POS" is undefined
-        if (p_head->x == BORDER_LEFT_POS || p_head->x == BORDER_RIGHT_POS || p_head->y == BORDER_UP_POS || p_head->y == BORDER_DOWN_POS)
-..\User\src\snake.c(251): error:  #20: identifier "BORDER_RIGHT_POS" is undefined
-        if (p_head->x == BORDER_LEFT_POS || p_head->x == BORDER_RIGHT_POS || p_head->y == BORDER_UP_POS || p_head->y == BORDER_DOWN_POS)
-..\User\src\snake.c(251): error:  #20: identifier "BORDER_UP_POS" is undefined
-        if (p_head->x == BORDER_LEFT_POS || p_head->x == BORDER_RIGHT_POS || p_head->y == BORDER_UP_POS || p_head->y == BORDER_DOWN_POS)
-..\User\src\snake.c(251): error:  #20: identifier "BORDER_DOWN_POS" is undefined
-        if (p_head->x == BORDER_LEFT_POS || p_head->x == BORDER_RIGHT_POS || p_head->y == BORDER_UP_POS || p_head->y == BORDER_DOWN_POS)
-..\User\src\snake.c(257): error:  #20: identifier "Map" is undefined
-                Map[food_pos[0]][food_pos[1]] = 1;
-..\User\src\snake.c(272): warning:  #223-D: function "os_sprintf" declared implicitly
-        os_sprintf(src, "%d", ScorePool[EatenFoodCnt]);
-..\User\src\snake.c(274): warning:  #223-D: function "os_memmove" declared implicitly
-        os_memmove(dest, "Score: ", os_strlen("Score:"));
-..\User\src\snake.c(274): warning:  #223-D: function "os_strlen" declared implicitly
-        os_memmove(dest, "Score: ", os_strlen("Score:"));
-..\User\src\snake.c(276): warning:  #223-D: function "strncat" declared implicitly
-        strncat(dest, src, os_strlen(src));
-..\User\src\snake.c(277): warning:  #223-D: function "OLED_ShowString" declared implicitly
-        OLED_ShowString(0, 0, dest);
-..\User\src\snake.c(319): error:  #20: identifier "Map" is undefined
-                Map[p_operate->x][p_operate->y] = 1;
-..\User\src\snake.c(324): warning:  #223-D: function "OLED_UpdateShow" declared implicitly
-        OLED_UpdateShow();
-..\User\src\snake.c: 19 warnings, 8 errors
-"F103ZET6_LCD_Pro\F103ZET6_LCD_Pro.axf" - 8 Error(s), 19 Warning(s).
+..\User\src\snake.c(222): warning:  #177-D: function "random"  was declared but never referenced
+  static uint16_t random(void)
+..\User\src\snake.c: 1 warning, 0 errors
+linking...
+Program Size: Code=11668 RO-data=6440 RW-data=56 ZI-data=1976  
+FromELF: creating hex file...
+"F103ZET6_LCD_Pro\F103ZET6_LCD_Pro.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -106,7 +57,6 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.3.0
-Target not created.
 Build Time Elapsed:  00:00:03
 </pre>
 </body>

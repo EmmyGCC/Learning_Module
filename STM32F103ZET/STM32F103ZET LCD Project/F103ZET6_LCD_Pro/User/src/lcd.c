@@ -4,11 +4,12 @@
 #include "font.h"
 #include "usart.h"
 #include "delay.h"
+#include "snake.h"
 
 
 //LCD的画笔颜色和背景色
-uint16_t POINT_COLOR=0x0000;	//画笔颜色
-uint16_t BACK_COLOR=0xFFFF;  //背景色(白)
+uint16_t POINT_COLOR = RED;	//画笔颜色
+uint16_t BACK_COLOR = WHITE;  //背景色(白)
 
 //管理LCD重要参数
 //默认为竖屏
@@ -119,10 +120,8 @@ void LCD_SetCursor(uint16_t Xpos, uint16_t Ypos)
     LCD_WriteReg(lcddev.setycmd, Ypos);
 }
 //设置LCD的自动扫描方向
-//注意:其他函数可能会受到此函数设置的影响(尤其是9341/6804这两个奇葩),
 //所以,一般设置为L2R_U2D即可,如果设置为其他扫描方式,可能导致显示不正常.
 //dir:0~7,代表8个方向(具体定义见lcd.h)
-//9320/9325/9328/4531/4535/1505/b505/5408/9341/5310/5510/1963等IC已经实际测试
 void LCD_Scan_Dir(uint8_t dir)
 {
 	uint16_t regval=0;
@@ -291,8 +290,8 @@ void LCD_Init(void)
 void LCD_Clear(uint16_t color)
 {
 	uint32_t index=0;
-	uint32_t totalpoint=lcddev.width;
-	totalpoint*=lcddev.height; 			//得到总点数
+	uint32_t totalpoint = lcddev.width;
+	totalpoint *= lcddev.height; 			//得到总点数
     
     LCD_SetCursor(0x00,0x0000);	//设置光标位置
 	LCD_WriteRAM_Prepare();     		//开始写入GRAM
@@ -342,32 +341,51 @@ void LCD_DrawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2)
 	uint16_t t;
 	int xerr=0,yerr=0,delta_x,delta_y,distance;
 	int incx,incy,uRow,uCol;
-	delta_x=x2-x1; //计算坐标增量
-	delta_y=y2-y1;
-	uRow=x1;
-	uCol=y1;
-	if(delta_x>0)incx=1; //设置单步方向
-	else if(delta_x==0)incx=0;//垂直线
-	else {incx=-1;delta_x=-delta_x;}
-	if(delta_y>0)incy=1;
-	else if(delta_y==0)incy=0;//水平线
-	else{incy=-1;delta_y=-delta_y;}
-	if( delta_x>delta_y)distance=delta_x; //选取基本增量坐标轴
-	else distance=delta_y;
+    
+	delta_x = x2-x1; //计算坐标增量
+	delta_y = y2-y1;
+	uRow = x1;
+	uCol = y1;
+    
+	if(delta_x>0)
+        incx = 1; //设置单步方向
+	else if(delta_x==0)
+        incx = 0;//垂直线
+	else 
+    {
+        incx = -1;
+        delta_x = -delta_x;
+    }
+    
+	if(delta_y>0)
+        incy = 1;
+	else if(delta_y==0)
+        incy = 0;//水平线
+	else
+    {
+        incy = -1;
+        delta_y = -delta_y;
+    }
+    
+	if( delta_x>delta_y)
+        distance=delta_x; //选取基本增量坐标轴
+	else 
+        distance=delta_y;
+    
 	for(t=0;t<=distance+1;t++ )//画线输出
 	{
 		LCD_DrawPoint(uRow,uCol);//画点
-		xerr+=delta_x ;
-		yerr+=delta_y ;
+		xerr += delta_x;
+		yerr += delta_y;
 		if(xerr > distance)
 		{
-			xerr-=distance;
-			uRow+=incx;
+			xerr -= distance;
+			uRow += incx;
 		}
 		if(yerr > distance)
 		{
-			yerr-=distance;
-			uCol+=incy;
+			yerr -= distance;
+			uCol += incy;
 		}
 	}
 }
@@ -547,37 +565,35 @@ void LCD_GameOverShow(void)
                     200, FONT_SIZE_24, "          ");
     delay_ms(500);
     
-    LCD_ShowString((MAX_ROW - strlen((char *)str_gameover)*(FONT_SIZE_24/2))/2,
-                    200, 200, FONT_SIZE_24, str_gameover);
+    LCD_ShowString((MAX_ROW - strlen((char *)str_gameover)*(FONT_SIZE_24/2))/2, 200,
+                    200, FONT_SIZE_24, str_gameover);
     delay_ms(2000);
 }
 
 
-//在指定位置显示
-//x,y:起始坐标
-void LCD_test(uint16_t x,uint16_t y)
+void LCD_BorderShow(void)
 {
-    uint8_t temp = 0XFF,t1,t;
-    
-    for(t=0;t<1;t++)        //画多少列像素点
-	{
-        for(t1=0;t1<8;t1++) //把temp的8bit显示出来
-        {
-            if(temp&0x80)
-            {
-                LCD_Fast_DrawPoint(x, y, POINT_COLOR);
-                LCD_Fast_DrawPoint(x+1, y, POINT_COLOR);
-                LCD_Fast_DrawPoint(x+2, y, POINT_COLOR);
-            }
-            else
-                LCD_Fast_DrawPoint(x, y, BACK_COLOR);
-            
-            temp<<=1;
-            y++;
-            
-            if(y>=lcddev.height)
-                return;		//超区域了
-        }
-    }
+    LCD_Fill(0, 0, BORDER_WIDTH, 280, MAGENTA);
+	LCD_Fill(MAX_ROW-BORDER_WIDTH, 0, MAX_ROW, 280, MAGENTA);
+	LCD_Fill(0, 0, MAX_ROW, BORDER_WIDTH, MAGENTA);
+	LCD_Fill(0, 272, MAX_ROW, 280, MAGENTA);
+}
+
+
+//=================================================================
+//函数名称：Trun_On_Point(u8 x,u8 y)
+//函数功能：点亮一个点 用于显示蛇的身体8*8像素的点
+//入口参数：蛇的起点坐标
+//出口参数：无
+//=================================================================
+void Trun_On_Point(uint16_t x, uint16_t y)
+{
+	LCD_Fill(x*SNAKE_WIDTH, y*SNAKE_WIDTH, x*SNAKE_WIDTH+SNAKE_WIDTH, y*SNAKE_WIDTH+SNAKE_WIDTH, RED);
+}
+
+
+void Trun_Off_Point(uint16_t x, uint16_t y)
+{
+	LCD_Fill(x*SNAKE_WIDTH, y*SNAKE_WIDTH, x*SNAKE_WIDTH+SNAKE_WIDTH, y*SNAKE_WIDTH+SNAKE_WIDTH, WHITE);
 }
 

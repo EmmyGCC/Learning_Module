@@ -2,6 +2,7 @@
 #include "stm32f1xx_hal.h"
 
 
+uint32_t time_dat = 0;
 
 void delay_us(uint32_t nus)
 {

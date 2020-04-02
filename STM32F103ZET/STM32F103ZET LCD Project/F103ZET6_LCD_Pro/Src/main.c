@@ -20,6 +20,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "adc.h"
 #include "dma.h"
 #include "usart.h"
 #include "gpio.h"
@@ -31,6 +32,8 @@
 #include "stdlib.h"
 #include "delay.h"
 #include "string.h"
+#include "snake.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -95,8 +98,13 @@ int main(void)
   MX_DMA_Init();
   MX_FSMC_Init();
   MX_USART1_UART_Init();
+  MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
   LCD_Init();
+  
+  LCD_BorderShow();
+  Score_Init(MAX_EATEN_CNT);
+  SnakeList_Init();
   /*
   __HAL_UART_ENABLE_IT(&huart1, UART_IT_IDLE);
   HAL_UART_Receive_DMA(&huart1, Get_pMacUartRxBuf()->Frame_Data, MAC_Data_Len*3);
@@ -106,41 +114,20 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  uint8_t x=0;
 
-  POINT_COLOR=RED;
 
   while (1)
   {
-    switch(x)
-    {
-        case 0:LCD_Clear(WHITE);break;
-        case 1:LCD_Clear(BLACK);break;
-        case 2:LCD_Clear(BLUE);break;
-        case 3:LCD_Clear(RED);break;
-        case 4:LCD_Clear(MAGENTA);break;
-        case 5:LCD_Clear(GREEN);break;
-        case 6:LCD_Clear(CYAN);break;
-
-        case 7:LCD_Clear(YELLOW);break;
-        case 8:LCD_Clear(BRRED);break;
-        case 9:LCD_Clear(GRAY);break;
-        case 10:LCD_Clear(LGRAY);break;
-        case 11:LCD_Clear(BROWN);break;
-    }
-
-    POINT_COLOR=RED;
+    /*
     LCD_ShowString(30, 40, strlen("WarShip STM32 ^_^")*(24/2), FONT_SIZE_24, "WarShip STM32 ^_^");
     LCD_ShowString(30, 70, 11*(16/2), FONT_SIZE_16, "TFTLCD TEST");
     LCD_ShowString(30, 90, 200, FONT_SIZE_16, "ATOM@ALIENTEK");
     LCD_ShowString(30, 130, 200, FONT_SIZE_12, "2014/5/4");
-    
-    /*x++;*/
-    if(x==12)
-        x=0;
-    
-    LCD_test(50, 200);
-    delay_ms(1000);
+      */
+      Game_Running(SnakeList);
+      
+      delay_ms(400);
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -156,8 +143,9 @@ void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
 
-  /** Initializes the CPU, AHB and APB busses clocks
+  /** Initializes the CPU, AHB and APB busses clocks 
   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
@@ -170,7 +158,7 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-  /** Initializes the CPU, AHB and APB busses clocks
+  /** Initializes the CPU, AHB and APB busses clocks 
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
@@ -180,6 +168,12 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_ADC;
+  PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV6;
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
     Error_Handler();
   }
@@ -210,7 +204,7 @@ void Error_Handler(void)
   * @retval None
   */
 void assert_failed(uint8_t *file, uint32_t line)
-{
+{ 
   /* USER CODE BEGIN 6 */
   /* User can add his own implementation to report the file name and line number,
      tex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */

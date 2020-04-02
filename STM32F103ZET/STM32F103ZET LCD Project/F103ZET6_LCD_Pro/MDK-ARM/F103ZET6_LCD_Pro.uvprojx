@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;..\User\inc</IncludePath>
+              <IncludePath>../Inc;    ../Drivers/STM32F1xx_HAL_Driver/Inc;    ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;    ../Drivers/CMSIS/Device/ST/STM32F1xx/Include;    ../Drivers/CMSIS/Include;    ..\User\inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -428,6 +428,11 @@
               <FilePath>../Src/gpio.c</FilePath>
             </File>
             <File>
+              <FileName>adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/adc.c</FilePath>
+            </File>
+            <File>
               <FileName>dma.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/dma.c</FilePath>
@@ -463,9 +468,14 @@
               <FilePath>../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f1xx_ll_fsmc.c</FileName>
+              <FileName>stm32f1xx_hal_adc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_fsmc.c</FilePath>
+              <FilePath>../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f1xx_hal_adc_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c</FilePath>
             </File>
             <File>
               <FileName>stm32f1xx_hal.c</FileName>
@@ -516,6 +526,11 @@
               <FileName>stm32f1xx_hal_exti.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f1xx_ll_fsmc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_fsmc.c</FilePath>
             </File>
             <File>
               <FileName>stm32f1xx_hal_sram.c</FileName>

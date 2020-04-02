@@ -52,19 +52,19 @@ void MX_FSMC_Init(void)
   hsram1.Init.WriteBurst = FSMC_WRITE_BURST_DISABLE;
   /* Timing */
   Timing.AddressSetupTime = 1;
-  Timing.AddressHoldTime = 0;
+  Timing.AddressHoldTime = 15;
   Timing.DataSetupTime = 0xf;
   Timing.BusTurnAroundDuration = 0;
-  Timing.CLKDivision = 0;
-  Timing.DataLatency = 0;
+  Timing.CLKDivision = 16;
+  Timing.DataLatency = 17;
   Timing.AccessMode = FSMC_ACCESS_MODE_A;
   /* ExtTiming */
   ExtTiming.AddressSetupTime = 0;
-  ExtTiming.AddressHoldTime = 0;
+  ExtTiming.AddressHoldTime = 15;
   ExtTiming.DataSetupTime = 3;
   ExtTiming.BusTurnAroundDuration = 0;
-  ExtTiming.CLKDivision = 0;
-  ExtTiming.DataLatency = 0;
+  ExtTiming.CLKDivision = 16;
+  ExtTiming.DataLatency = 17;
   ExtTiming.AccessMode = FSMC_ACCESS_MODE_A;
 
   if (HAL_SRAM_Init(&hsram1, &Timing, &ExtTiming) != HAL_OK)

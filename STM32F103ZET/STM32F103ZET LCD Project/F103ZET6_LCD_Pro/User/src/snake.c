@@ -6,17 +6,20 @@
  */
 #include "snake.h"
 #include "stdlib.h"
+#include "string.h"
 #include "stdio.h"
 #include "time.h"
 #include "stm32f1xx_hal.h"
 #include "lcd.h"
+#include "adc.h"
 
 
 
 
 SNAKE_T* SnakeList;
 uint8_t last_dir = DIR_RIGHT;		//蛇身上次移动的方向
-uint8_t food_pos[2] = {0};
+uint16_t food_pos[2] = {0};
+uint32_t RandomSeed = 0;
 
 uint16_t ScorePool[MAX_EATEN_CNT] = {0};
 volatile uint8_t EatenFoodCnt = 0;
@@ -42,10 +45,10 @@ void SnakeList_Init(void)
 
 	SnakeList->next = NULL;
 	SnakeList->prev = SnakeList;
-	SnakeList->x = 50;	//蛇有的初始位置
-	SnakeList->y = 50;
+	SnakeList->x = 10;	//蛇有的初始位置
+	SnakeList->y = 10;
 
-	for (; length < SNAKE_INIT_LENGTH; length++)
+	for (; length < 3; length++)
 	{
 		SnakeList_LengthAppend(SnakeList);
 	}
@@ -59,7 +62,7 @@ void Score_Init(uint16_t max_eaten_cnt)
 	for (cnt = 0; cnt < max_eaten_cnt; cnt++)
 	{
 		ScorePool[cnt] = (cnt * 10);
-		printf("ScorePool[%d] = %d", cnt, ScorePool[cnt]);
+		//printf("ScorePool[%d] = %d\r\n", cnt, ScorePool[cnt]);
 	}
 }
 
@@ -94,74 +97,83 @@ void SnakeList_LengthAppend(SNAKE_T* p_head)
 
 uint8_t Snake_Direction_Input(void)
 {
-	uint16_t adc_addr[ADC_SAMPLE_TIMES] = {0};
-	uint32_t cnt;
-	uint16_t adc_value = 0;
-
-	system_adc_read_fast(adc_addr, ADC_SAMPLE_TIMES, 8);
-	for(cnt = 0; cnt < ADC_SAMPLE_TIMES; cnt++)
-	{
-		adc_value += adc_addr[cnt];
-		/*printf("i = %d, adc_v = %d \r\n", i, adc_addr[i]);*/
-	}
-	adc_value /= ADC_SAMPLE_TIMES;
-
-	if (adc_value <= 200)
+	uint16_t adc_value[ADC_SAMPLE_TIMES] = {0};
+    uint16_t adc_x = 0;
+    uint16_t adc_y = 0;
+    
+    HAL_ADC_Start_DMA(&hadc1, (uint32_t *)&adc_value[0], ADC_SAMPLE_TIMES);
+    
+    for (uint8_t cnt = 0; cnt < ADC_SAMPLE_TIMES/2; cnt++)
+    {
+        adc_y += adc_value[cnt*2];
+    }
+    adc_y /= (ADC_SAMPLE_TIMES/2);
+    printf("\r\n----adc_y: %d----\r\n", adc_y);
+    
+    for (uint8_t cnt = 0; cnt < ADC_SAMPLE_TIMES/2; cnt++)
+    {
+        adc_x += adc_value[cnt*2+1];
+    }
+    adc_x /= (ADC_SAMPLE_TIMES/2);
+    printf("\r\n----adc_x: %d----\r\n", adc_x);
+    
+	if (adc_x >= 4000)
 	{
 		return DIR_LEFT;
 	}
-	else if(adc_value >= 700)
+	else if(adc_x <= 1000)
 	{
 		return DIR_RIGHT;
 	}
-	if( GPIO_INPUT_GET(GPIO_ID_PIN(5)) == 0 )			// 读取GPIO_5电平,按下为方向上
+    if (adc_y <= 300)
 	{
 		return DIR_UP;
 	}
-	if( GPIO_INPUT_GET(GPIO_ID_PIN(13)) == 0 )			// 读取GPIO_13电平,按下为选择Level1
+	else if(adc_y >= 800)
 	{
 		return DIR_DOWN;
 	}
 	return DIR_NONE;
 }
 
-
+/*
 uint8_t KEY_Direction_Input(void)
 {
-	if( GPIO_INPUT_GET(GPIO_ID_PIN(0)) == 0 )			// 读取GPIO_0电平,按下为方向上
+	if( HAL_GPIO_ReadPin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin) == 0 )			// 读取GPIO_0电平,按下为方向上
 	{
 		return DIR_LEFT;
 	}
-	if( GPIO_INPUT_GET(GPIO_ID_PIN(5)) == 0 )			// 读取GPIO_5电平,按下为方向上
+	if( HAL_GPIO_ReadPin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin) == 0 )			// 读取GPIO_5电平,按下为方向上
 	{
 		return DIR_UP;
 	}
-	if( GPIO_INPUT_GET(GPIO_ID_PIN(12)) == 0 )			// 读取GPIO_12电平,按下为选择Level1
+	if( HAL_GPIO_ReadPin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin) == 0 )			// 读取GPIO_12电平,按下为选择Level1
 	{
 		return DIR_RIGHT;
 	}
-	if( GPIO_INPUT_GET(GPIO_ID_PIN(13)) == 0 )			// 读取GPIO_13电平,按下为选择Level1
+	if( HAL_GPIO_ReadPin(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin) == 0 )			// 读取GPIO_13电平,按下为选择Level1
 	{
 		return DIR_DOWN;
 	}
 
 	return DIR_NONE;
 }
-
+*/
 
 void Snake_Move(SNAKE_T* p_head)
 {
 	SNAKE_T *p_operate = p_head;
 	SNAKE_T *p_tail = p_head->prev;				//获取到尾结点
-	uint8_t move_dir = last_dir;						//获取真实移动的方向
-	uint8_t cur_dir = DIR_NONE;
+	uint8_t move_dir = last_dir;                //获取真实移动的方向
+	static uint8_t cur_dir = DIR_NONE;
 
 	if (p_operate == NULL)
 	{
 		printf("SnakeList_Move error\r\n");
 		return;
 	}
-	Map[p_tail->x][p_tail->y] = 0;				//oled中对应尾结点的像素点
+    
+    Trun_Off_Point(p_tail->x, p_tail->y);       //熄灭蛇尾的点
 	/********************从尾结点向前遍历链表并修改值*********************/
 	while (p_tail != p_head)
 	{
@@ -178,8 +190,9 @@ void Snake_Move(SNAKE_T* p_head)
 	{
 		if (cur_dir != DIR_NONE)
 		{
-			last_dir = cur_dir;					//此次获取的方向值，在下次进来判断switch才会生效
-			move_dir = last_dir;
+			move_dir = cur_dir;					//此次获取的方向值，在下次进来判断switch才会生效
+            last_dir = move_dir;
+            RandomSeed = HAL_GetTick();
 		}
 	}
 	printf("\r\n----Snake_Move move_dir:%d ----\r\n", move_dir);
@@ -191,25 +204,27 @@ void Snake_Move(SNAKE_T* p_head)
 		case DIR_DOWN:
 			p_operate->y++;
 			break;
-		case DIR_LEFT:
-			p_operate->x--;
-			break;
 		case DIR_RIGHT:
 			p_operate->x++;
+			break;
+		case DIR_LEFT:
+			p_operate->x--;
 			break;
 		default:
 			break;
 	}
+    
+    Snake_Show(p_head);
 }
+
 
 
 static uint16_t random(void)
 {
     uint16_t ret = 0;
-    time_t t;
-
+    
     /* 初始化随机数发生器 */
-    srand((unsigned) time(&t));
+    srand(RandomSeed);
     /* 产生一个0-30000的随机数 */
     ret = rand() % 30000;
     printf("%d\n", ret);
@@ -220,27 +235,30 @@ static uint16_t random(void)
 
 void Create_NewFood(uint8_t *food_state)
 {
-	uint16_t random_num = 0;
-	uint8_t x_value = 0;
-	uint8_t y_value = 0;
+	uint16_t random_num1 = 0;
+    uint16_t random_num2 = 0;
+	uint16_t x_value = 0;
+	uint16_t y_value = 0;
 
 	while(*food_state == FOOD_EMPTY)
 	{
-		random_num = random();
-		x_value = random_num % MAX_ROW;
-		y_value = random_num % MAX_COLUMN;
+		random_num1 = HAL_GetTick();//random();
+        random_num2 = HAL_GetTick();//random();
+		x_value = random_num1 % 240;
+		y_value = random_num2 % 320;
 
-		if ((x_value > 1 && x_value < (MAX_ROW-2)) && (y_value < MAX_COLUMN-1 && y_value > (2*8+1)))		//放置食物的位置合规
+		if ((x_value > BORDER_LEFT_POS && x_value < BORDER_RIGHT_POS) 
+            && (y_value < ((280-BORDER_WIDTH)/BORDER_WIDTH) && y_value > BORDER_UP_POS))		//放置食物的位置合规
 		{
-			printf("\r\n----Create_NewFood----\r\n");	// 进入回调函数标志
-
-			if (Map[x_value][y_value] == 0)
-			{
-				Map[x_value][y_value] = 1;
-				food_pos[0] = x_value;
-				food_pos[1] = y_value;
-				*food_state = FOOD_READY;
-			}
+			printf("\r\n----Create_NewFood----\r\n");
+            printf("\r\n----x_value: %d----\r\n", x_value);
+        printf("\r\n----Y_value: %d----\r\n", y_value);
+            Trun_On_Point(x_value, y_value);
+            
+            food_pos[0] = x_value;
+            food_pos[1] = y_value;
+            *food_state = FOOD_READY;
+            break;
 		}
 	}
 }
@@ -254,7 +272,7 @@ static uint8_t Snake_State(SNAKE_T* p_head, uint8_t *food_state)
 	if (p_head->x == food_pos[0] && p_head->y == food_pos[1])
 	{
 		*food_state = FOOD_EMPTY;
-		Map[food_pos[0]][food_pos[1]] = 1;
+        Trun_On_Point(food_pos[0], food_pos[1]);
 		EatenFoodCnt++;
 
 		return FOOD_GOT;
@@ -269,12 +287,14 @@ void Show_AddScore(void)
 	char src[5] = "";
 	char dest[20] = "";
 
-	os_sprintf(src, "%d", ScorePool[EatenFoodCnt]);
+	sprintf(src, "%d", ScorePool[EatenFoodCnt]);
 	printf("\r\n========src: %s, %d========\r\n", src, src[0]);//******************************
-	os_memmove(dest, "Score: ", os_strlen("Score:"));
+	memmove(dest, "Score: ", strlen("Score:"));
 
-	strncat(dest, src, os_strlen(src));
-	OLED_ShowString(0, 0, dest);
+	strncat(dest, src, strlen(src));
+    
+    LCD_ShowString((MAX_ROW - strlen((char *)dest)*(FONT_SIZE_24/2))/2, 300,
+                    200, FONT_SIZE_24, (uint8_t *)dest);
 }
 /*
  * 检查游戏状态
@@ -308,21 +328,9 @@ void Check_GameState(uint8_t *food_state)
 
 void Game_Running(SNAKE_T* p_head)
 {
-	SNAKE_T *p_operate = p_head;
-
 	static uint8_t food_state = FOOD_EMPTY;
-
+    
 	Snake_Move(p_head);
-
-	while(p_operate != NULL)					//遍历链表填充蛇身到Map中用于显示
-	{
-		Map[p_operate->x][p_operate->y] = 1;
-
-		p_operate = p_operate->next;
-	}
-
-	OLED_UpdateShow();
-	Show_AddScore();
 
 	Create_NewFood(&food_state);
 
@@ -330,5 +338,17 @@ void Game_Running(SNAKE_T* p_head)
 }
 
 
+/*LCD绘制出蛇身*/
+void Snake_Show(void *p_head)
+{
+    SNAKE_T *p_operate = (SNAKE_T *)p_head;
+    
+    while(p_operate != NULL)
+    {
+        Trun_On_Point(p_operate->x, p_operate->y);
+        
+        p_operate = p_operate->next;
+    }
+}
 
 

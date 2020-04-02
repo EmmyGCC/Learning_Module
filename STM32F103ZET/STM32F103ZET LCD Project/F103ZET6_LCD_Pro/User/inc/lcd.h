@@ -95,8 +95,12 @@ void LCD_ShowChar(uint16_t x,uint16_t y,uint8_t num,uint8_t size,uint8_t mode);	
 void LCD_ShowNum(uint16_t x,uint16_t y,uint32_t num,uint8_t len,uint8_t size);  						//显示一个数字
 void LCD_ShowxNum(uint16_t x,uint16_t y,uint32_t num,uint8_t len,uint8_t size,uint8_t mode);				//显示 数字		
 void LCD_ShowString(uint16_t x,uint16_t y,uint16_t width,uint8_t size,uint8_t *p);//显示一个字符串,12/16字体
-void LCD_test(uint16_t x,uint16_t y);
+
+void LCD_test(void *p_head);
+void Trun_On_Point (uint16_t x, uint16_t y);
+void Trun_Off_Point(uint16_t x, uint16_t y);
 void LCD_GameOverShow(void);
+void LCD_BorderShow(void);
 
 
 
