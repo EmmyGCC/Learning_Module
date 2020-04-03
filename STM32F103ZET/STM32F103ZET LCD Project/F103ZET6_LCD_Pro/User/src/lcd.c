@@ -8,7 +8,7 @@
 
 
 //LCD的画笔颜色和背景色
-uint16_t POINT_COLOR = RED;	//画笔颜色
+uint16_t POINT_COLOR = BROWN;	//画笔颜色
 uint16_t BACK_COLOR = WHITE;  //背景色(白)
 
 //管理LCD重要参数
@@ -534,7 +534,7 @@ void LCD_ShowxNum(uint16_t x,uint16_t y,uint32_t num,uint8_t len,uint8_t size,ui
 //*p:字符串起始地址
 void LCD_ShowString(uint16_t x, uint16_t y, uint16_t width, uint8_t size, uint8_t *p)
 {
-    uint8_t height = size;
+    uint16_t height = size;
 	uint8_t x0 = x;
 	width += x;
 	height += y;
@@ -555,18 +555,18 @@ void LCD_ShowString(uint16_t x, uint16_t y, uint16_t width, uint8_t size, uint8_
 
 void LCD_GameOverShow(void)
 {
-    uint8_t str_gameover[] = "GAME OVER!";
+    uint8_t str_gameover[] = "GOOD JOD GAME OVER";
     
-    LCD_ShowString((MAX_ROW - strlen((char *)str_gameover)*(FONT_SIZE_24/2))/2, 200,
-                    200, FONT_SIZE_24, str_gameover);
+    LCD_ShowString((MAX_ROW + BORDER_WIDTH - strlen((char *)str_gameover)*(FONT_SIZE_24/2))/2, 200,
+                    240, FONT_SIZE_24, str_gameover);
     delay_ms(500);
     
-    LCD_ShowString((MAX_ROW - strlen((char *)str_gameover)*(FONT_SIZE_24/2))/2, 200,
-                    200, FONT_SIZE_24, "          ");
+    LCD_ShowString((MAX_ROW + BORDER_WIDTH - strlen((char *)str_gameover)*(FONT_SIZE_24/2))/2, 200,
+                    240, FONT_SIZE_24, "                  ");
     delay_ms(500);
     
-    LCD_ShowString((MAX_ROW - strlen((char *)str_gameover)*(FONT_SIZE_24/2))/2, 200,
-                    200, FONT_SIZE_24, str_gameover);
+    LCD_ShowString((MAX_ROW + BORDER_WIDTH - strlen((char *)str_gameover)*(FONT_SIZE_24/2))/2, 200,
+                    240, FONT_SIZE_24, str_gameover);
     delay_ms(2000);
 }
 

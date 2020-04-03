@@ -37,3 +37,4 @@ f103zet6_lcd_pro\snake.o: ..\User\inc\lcd.h
 f103zet6_lcd_pro\snake.o: ..\User\inc\sys.h
 f103zet6_lcd_pro\snake.o: ../Inc/adc.h
 f103zet6_lcd_pro\snake.o: ../Inc/main.h
+f103zet6_lcd_pro\snake.o: ..\User\inc\delay.h

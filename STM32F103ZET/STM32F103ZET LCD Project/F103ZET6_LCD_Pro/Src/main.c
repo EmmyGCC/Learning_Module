@@ -114,8 +114,35 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-
-
+  uint8_t dir = DIR_NONE;
+  uint16_t time = 400;
+  
+  LCD_ShowString(10, 90, 200, FONT_SIZE_16, "UP: HARD");
+  LCD_ShowString(10, 130, 200, FONT_SIZE_16, "LEFT/RIGHT: MEDIUM");
+  LCD_ShowString(10, 170, 200, FONT_SIZE_16, "DOWN: EASY");
+  
+    while(dir == DIR_NONE)
+    {
+        dir = Snake_Direction_Input();
+        switch(dir)
+        {
+            case DIR_UP:
+                time = 90;
+                break;
+            case DIR_LEFT:
+            case DIR_RIGHT:
+                time = 180;
+               break;
+            case DIR_DOWN:
+                time = 300;
+                break;
+            default:
+                break;
+        }
+    }
+    LCD_ShowString(10, 90, 200, FONT_SIZE_16, "                  ");
+    LCD_ShowString(10, 130, 200, FONT_SIZE_16, "                  ");
+    LCD_ShowString(10, 170, 200, FONT_SIZE_16, "                  ");
   while (1)
   {
     /*
@@ -125,8 +152,8 @@ int main(void)
     LCD_ShowString(30, 130, 200, FONT_SIZE_12, "2014/5/4");
       */
       Game_Running(SnakeList);
-      
-      delay_ms(400);
+
+      delay_ms(time);
 
     /* USER CODE END WHILE */
 

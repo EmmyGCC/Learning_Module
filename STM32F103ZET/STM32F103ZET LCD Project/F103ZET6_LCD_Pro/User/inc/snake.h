@@ -15,12 +15,12 @@
 #define BORDER_WIDTH        8
 
 #define MAX_EATEN_CNT		50
-#define ADC_SAMPLE_TIMES	10
+#define ADC_SAMPLE_TIMES	2
 
-#define BORDER_LEFT_POS     0
+#define BORDER_LEFT_POS     (0)
 #define BORDER_RIGHT_POS    (MAX_ROW-BORDER_WIDTH)/8
-#define BORDER_UP_POS       0
-#define BORDER_DOWN_POS     (MAX_COLUMN-BORDER_WIDTH)/8
+#define BORDER_UP_POS       (0)
+#define BORDER_DOWN_POS     (280-BORDER_WIDTH)/8
 
 
 
@@ -63,6 +63,7 @@ void Score_Init(uint16_t max_eaten_cnt);
 void SnakeList_LengthAppend(SNAKE_T* p_head);
 void Game_Running(SNAKE_T* p_head);
 void Snake_Show(void *p_head);
+uint8_t Snake_Direction_Input(void);
 
 
 #endif /* APP_DRIVER_SNAKE_H_ */

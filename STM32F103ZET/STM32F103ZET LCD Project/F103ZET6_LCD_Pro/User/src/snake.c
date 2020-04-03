@@ -12,6 +12,8 @@
 #include "stm32f1xx_hal.h"
 #include "lcd.h"
 #include "adc.h"
+#include "main.h"
+#include "delay.h"
 
 
 
@@ -22,7 +24,7 @@ uint16_t food_pos[2] = {0};
 uint32_t RandomSeed = 0;
 
 uint16_t ScorePool[MAX_EATEN_CNT] = {0};
-volatile uint8_t EatenFoodCnt = 0;
+volatile uint8_t EatenFoodCnt = 1;
 
 
 
@@ -36,10 +38,11 @@ void SnakeList_Init(void)
 {
 	SnakeList = Node_Create();
 	uint8_t length = 0;
-	printf("\r\n----SnakeList_Init----\r\n");	// 进入回调函数标志
+    DEBUG_Printf(" __LINE__:%d ,__FUNCTION__:%s",  __LINE__,__FUNCTION__);
+	DEBUG_Printf("\r\n----SnakeList_Init----\r\n");	// 进入回调函数标志
 	if (SnakeList == NULL)
 	{
-		printf("SnakeList_Init error\r\n");
+		DEBUG_Printf("SnakeList_Init error\r\n");
 		return;
 	}
 
@@ -57,12 +60,12 @@ void SnakeList_Init(void)
 
 void Score_Init(uint16_t max_eaten_cnt)
 {
-	uint16_t cnt = 0;
+	uint16_t cnt = 1;
 
-	for (cnt = 0; cnt < max_eaten_cnt; cnt++)
+	for (cnt = 1; cnt < max_eaten_cnt; cnt++)
 	{
 		ScorePool[cnt] = (cnt * 10);
-		//printf("ScorePool[%d] = %d\r\n", cnt, ScorePool[cnt]);
+		DEBUG_Printf("ScorePool[%d] = %d\r\n", cnt, ScorePool[cnt]);
 	}
 }
 
@@ -74,16 +77,16 @@ void SnakeList_LengthAppend(SNAKE_T* p_head)
 
 	if (p_head == NULL)	//检查列表头地址有效
 	{
-		printf("SnakeList_LengthAppend error\r\n");
+		DEBUG_Printf("SnakeList_LengthAppend error\r\n");
 		free(new_node);
 		return;
 	}
-	/*printf("\r\n----new_node addr:%p----\r\n", new_node);	// 进入回调函数标志*/
+	DEBUG_Printf("\r\n----new_node addr:%p----\r\n", new_node);	// 进入回调函数标志
 	while (p_operate->next != NULL)		//找到最后一个不为空的节点地址
 	{
 		p_operate = p_operate->next;
 	}
-
+DEBUG_Printf(" __LINE__:%d ,__FUNCTION__:%s",  __LINE__,__FUNCTION__);
 	/*********************************************/
 	new_node->next = p_operate->next;	//根据while条件判断下来，其实就是NULL
 	new_node->prev = p_operate;
@@ -102,36 +105,36 @@ uint8_t Snake_Direction_Input(void)
     uint16_t adc_y = 0;
     
     HAL_ADC_Start_DMA(&hadc1, (uint32_t *)&adc_value[0], ADC_SAMPLE_TIMES);
-    
+    delay_ms(10);
     for (uint8_t cnt = 0; cnt < ADC_SAMPLE_TIMES/2; cnt++)
     {
-        adc_y += adc_value[cnt*2];
+        adc_y += adc_value[cnt*2+1];
     }
     adc_y /= (ADC_SAMPLE_TIMES/2);
-    printf("\r\n----adc_y: %d----\r\n", adc_y);
+    DEBUG_Printf("\r\n----adc_y: %d----\r\n", adc_y);
     
     for (uint8_t cnt = 0; cnt < ADC_SAMPLE_TIMES/2; cnt++)
     {
-        adc_x += adc_value[cnt*2+1];
+        adc_x += adc_value[cnt*2];
     }
     adc_x /= (ADC_SAMPLE_TIMES/2);
-    printf("\r\n----adc_x: %d----\r\n", adc_x);
-    
-	if (adc_x >= 4000)
+    DEBUG_Printf("\r\n----adc_x: %d----\r\n", adc_x);
+    DEBUG_Printf(" __LINE__:%d ,__FUNCTION__:%s",  __LINE__,__FUNCTION__);
+	if (adc_y >= 4000)
 	{
-		return DIR_LEFT;
+		return DIR_DOWN;
 	}
-	else if(adc_x <= 1000)
-	{
-		return DIR_RIGHT;
-	}
-    if (adc_y <= 300)
+	else if(adc_y <= 1000)
 	{
 		return DIR_UP;
 	}
-	else if(adc_y >= 800)
+    if (adc_x <= 1000)
 	{
-		return DIR_DOWN;
+		return DIR_RIGHT;
+	}
+	else if(adc_x >= 4000)
+	{
+		return DIR_LEFT;
 	}
 	return DIR_NONE;
 }
@@ -169,7 +172,7 @@ void Snake_Move(SNAKE_T* p_head)
 
 	if (p_operate == NULL)
 	{
-		printf("SnakeList_Move error\r\n");
+		DEBUG_Printf("SnakeList_Move error\r\n");
 		return;
 	}
     
@@ -177,8 +180,6 @@ void Snake_Move(SNAKE_T* p_head)
 	/********************从尾结点向前遍历链表并修改值*********************/
 	while (p_tail != p_head)
 	{
-		/*printf("\r\n----p_tail->prev addr = %p----\r\n", p_tail->prev);
-		printf("\r\n----p_tail->data = %d,%d----\r\n", p_tail->x, p_tail->y);*/
 		p_tail->x = p_tail->prev->x;			//尾结点的值为上一个节点的值，这样移动的时候就在向前移动
 		p_tail->y = p_tail->prev->y;
 
@@ -195,7 +196,7 @@ void Snake_Move(SNAKE_T* p_head)
             RandomSeed = HAL_GetTick();
 		}
 	}
-	printf("\r\n----Snake_Move move_dir:%d ----\r\n", move_dir);
+    DEBUG_Printf("\r\n----Snake_Move move_dir:%d ----\r\n", move_dir);
 	switch(move_dir)							//判断头结点的位置改变方向修改头结点的值
 	{
 		case DIR_UP:
@@ -213,8 +214,8 @@ void Snake_Move(SNAKE_T* p_head)
 		default:
 			break;
 	}
-    
-    Snake_Show(p_head);
+    DEBUG_Printf(" __LINE__:%d ,__FUNCTION__:%s",  __LINE__,__FUNCTION__);
+    Snake_Show(p_operate);
 }
 
 
@@ -225,38 +226,38 @@ static uint16_t random(void)
     
     /* 初始化随机数发生器 */
     srand(RandomSeed);
-    /* 产生一个0-30000的随机数 */
-    ret = rand() % 30000;
-    printf("%d\n", ret);
+    /* 产生一个0-300的随机数 */
+    ret = rand() % 300;
     
     return ret;
 }
 
 
-void Create_NewFood(uint8_t *food_state)
+void Create_NewFood(GAME_STATE_E *food_state)
 {
-	uint16_t random_num1 = 0;
-    uint16_t random_num2 = 0;
+	uint32_t random_num1 = 0;
+    uint32_t random_num2 = 0;
 	uint16_t x_value = 0;
 	uint16_t y_value = 0;
 
 	while(*food_state == FOOD_EMPTY)
 	{
-		random_num1 = HAL_GetTick();//random();
-        random_num2 = HAL_GetTick();//random();
-		x_value = random_num1 % 240;
-		y_value = random_num2 % 320;
-
-		if ((x_value > BORDER_LEFT_POS && x_value < BORDER_RIGHT_POS) 
-            && (y_value < ((280-BORDER_WIDTH)/BORDER_WIDTH) && y_value > BORDER_UP_POS))		//放置食物的位置合规
+		random_num1 = HAL_GetTick() + random();
+        random_num2 = HAL_GetTick() + random();
+		x_value = random_num1 % (240 - BORDER_WIDTH);
+		y_value = random_num2 % (280 - BORDER_WIDTH);
+        
+        DEBUG_Printf(" __LINE__:%d ,__FUNCTION__:%s",  __LINE__,__FUNCTION__);
+		if (x_value > (BORDER_LEFT_POS+BORDER_WIDTH) && y_value > (BORDER_UP_POS+BORDER_WIDTH))		//放置食物的位置合规
 		{
-			printf("\r\n----Create_NewFood----\r\n");
-            printf("\r\n----x_value: %d----\r\n", x_value);
-        printf("\r\n----Y_value: %d----\r\n", y_value);
-            Trun_On_Point(x_value, y_value);
+			DEBUG_Printf("\r\n----Create_NewFood----\r\n");
+            DEBUG_Printf("\r\n----x_value: %d----\r\n", x_value);
+            DEBUG_Printf("\r\n----Y_value: %d----\r\n", y_value);
             
-            food_pos[0] = x_value;
-            food_pos[1] = y_value;
+            Trun_On_Point(x_value/8, y_value/8);
+            
+            food_pos[0] = x_value/8;
+            food_pos[1] = y_value/8;
             *food_state = FOOD_READY;
             break;
 		}
@@ -264,7 +265,25 @@ void Create_NewFood(uint8_t *food_state)
 }
 
 
-static uint8_t Snake_State(SNAKE_T* p_head, uint8_t *food_state)
+
+void Show_AddScore(void)
+{
+	char src[5] = "";
+	char dest[20] = "";
+
+	sprintf(src, "%d", ScorePool[EatenFoodCnt++]);
+	DEBUG_Printf("\r\n========src: %s, %d========\r\n", src, src[0]);//******************************
+	memmove(dest, "Score: ", strlen("Score: "));
+    
+	strncat(dest, src, strlen(src));
+    DEBUG_Printf(" __LINE__:%d ,__FUNCTION__:%s",  __LINE__,__FUNCTION__);
+
+    LCD_ShowString(30/*(MAX_ROW - strlen((char *)dest)*(FONT_SIZE_16/2))/2*/, 285,
+                    200, FONT_SIZE_24, (uint8_t *)dest);
+}
+
+
+static uint8_t Snake_State(SNAKE_T* p_head, GAME_STATE_E *food_state)
 {
 	if (p_head->x == BORDER_LEFT_POS || p_head->x == BORDER_RIGHT_POS || p_head->y == BORDER_UP_POS || p_head->y == BORDER_DOWN_POS)
 		return SNAKE_HIT;
@@ -272,9 +291,11 @@ static uint8_t Snake_State(SNAKE_T* p_head, uint8_t *food_state)
 	if (p_head->x == food_pos[0] && p_head->y == food_pos[1])
 	{
 		*food_state = FOOD_EMPTY;
-        Trun_On_Point(food_pos[0], food_pos[1]);
-		EatenFoodCnt++;
-
+        //Trun_On_Point(food_pos[0], food_pos[1]);
+        
+        DEBUG_Printf(" __LINE__:%d ,__FUNCTION__:%s",  __LINE__,__FUNCTION__);        
+        DEBUG_Printf("FOOD_GOT!\r\n");
+        
 		return FOOD_GOT;
 	}
 
@@ -282,39 +303,27 @@ static uint8_t Snake_State(SNAKE_T* p_head, uint8_t *food_state)
 }
 
 
-void Show_AddScore(void)
-{
-	char src[5] = "";
-	char dest[20] = "";
-
-	sprintf(src, "%d", ScorePool[EatenFoodCnt]);
-	printf("\r\n========src: %s, %d========\r\n", src, src[0]);//******************************
-	memmove(dest, "Score: ", strlen("Score:"));
-
-	strncat(dest, src, strlen(src));
-    
-    LCD_ShowString((MAX_ROW - strlen((char *)dest)*(FONT_SIZE_24/2))/2, 300,
-                    200, FONT_SIZE_24, (uint8_t *)dest);
-}
 /*
  * 检查游戏状态
  * */
-void Check_GameState(uint8_t *food_state)
+void Check_GameState(GAME_STATE_E *food_state)
 {
 	uint8_t game_state = SNAKE_MOVE;
 
 	game_state = Snake_State(SnakeList, food_state);
-	/*printf("\r\ngame_state: %d\r\n", game_state);	// 进入回调函数标志*/
+    DEBUG_Printf(" __LINE__:%d ,__FUNCTION__:%s",  __LINE__,__FUNCTION__);
+	DEBUG_Printf("\r\ngame_state: %d\r\n", game_state);	// 进入回调函数标志
 	switch(game_state)
 	{
 		case SNAKE_MOVE:
 			break;
 		case FOOD_GOT:
-			Show_AddScore();
-			SnakeList_LengthAppend(SnakeList);
+            Show_AddScore();
+            SnakeList_LengthAppend(SnakeList);
 			break;
 		case SNAKE_HIT:
-			printf("your snake hit the wall, game over!\r\n");
+            DEBUG_Printf(" __LINE__:%d ,__FUNCTION__:%s",  __LINE__,__FUNCTION__);
+			DEBUG_Printf("your snake hit the wall, game over!\r\n");
 			game_state = GAME_OVER;
 			LCD_GameOverShow();
             
@@ -328,7 +337,7 @@ void Check_GameState(uint8_t *food_state)
 
 void Game_Running(SNAKE_T* p_head)
 {
-	static uint8_t food_state = FOOD_EMPTY;
+	static GAME_STATE_E food_state = FOOD_EMPTY;
     
 	Snake_Move(p_head);
 
