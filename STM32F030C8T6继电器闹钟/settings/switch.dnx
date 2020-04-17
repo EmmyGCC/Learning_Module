@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+<settings>
+    <Stack>
+        <FillEnabled>0</FillEnabled>
+        <OverflowWarningsEnabled>1</OverflowWarningsEnabled>
+        <WarningThreshold>90</WarningThreshold>
+        <SpWarningsEnabled>1</SpWarningsEnabled>
+        <WarnLogOnly>1</WarnLogOnly>
+        <UseTrigger>1</UseTrigger>
+        <TriggerName>main</TriggerName>
+        <LimitSize>0</LimitSize>
+        <ByteLimit>50</ByteLimit>
+    </Stack>
+    <StLinkDriver>
+        <stlinkserialNo>47321087</stlinkserialNo>
+        <stlinkfoundProbes />
+        <stlinkResetStyle>0</stlinkResetStyle>
+        <stlinkResetStrategy>1</stlinkResetStrategy>
+        <CStepIntDis>_ 0</CStepIntDis>
+        <LeaveTargetRunning>_ 0</LeaveTargetRunning>
+    </StLinkDriver>
+    <DebugChecksum>
+        <Checksum>1551397812</Checksum>
+    </DebugChecksum>
+    <Exceptions>
+        <StopOnUncaught>_ 0</StopOnUncaught>
+        <StopOnThrow>_ 0</StopOnThrow>
+    </Exceptions>
+    <CallStack>
+        <ShowArgs>0</ShowArgs>
+    </CallStack>
+    <Disassembly>
+        <MixedMode>1</MixedMode>
+    </Disassembly>
+    <CodeCoverage>
+        <Enabled>_ 0</Enabled>
+    </CodeCoverage>
+    <Trace1>
+        <Enabled>0</Enabled>
+        <ShowSource>1</ShowSource>
+    </Trace1>
+    <stlink>
+        <stlinkserialNo>EE5626A6</stlinkserialNo>
+        <stlinkfoundProbes />
+    </stlink>
+    <SWOTraceHWSettings>
+        <OverrideDefaultClocks>0</OverrideDefaultClocks>
+        <CpuClock>72000000</CpuClock>
+        <ClockAutoDetect>0</ClockAutoDetect>
+        <ClockWanted>2000000</ClockWanted>
+        <JtagSpeed>2000000</JtagSpeed>
+        <Prescaler>36</Prescaler>
+        <TimeStampPrescIndex>0</TimeStampPrescIndex>
+        <TimeStampPrescData>0</TimeStampPrescData>
+        <PcSampCYCTAP>1</PcSampCYCTAP>
+        <PcSampPOSTCNT>15</PcSampPOSTCNT>
+        <PcSampIndex>0</PcSampIndex>
+        <DataLogMode>0</DataLogMode>
+        <ITMportsEnable>0</ITMportsEnable>
+        <ITMportsTermIO>0</ITMportsTermIO>
+        <ITMportsLogFile>0</ITMportsLogFile>
+        <ITMlogFile>$PROJ_DIR$\ITM.log</ITMlogFile>
+    </SWOTraceHWSettings>
+    <Trace2>
+        <Enabled>0</Enabled>
+        <ShowSource>0</ShowSource>
+    </Trace2>
+    <SWOTraceWindow>
+        <PcSampling>0</PcSampling>
+        <InterruptLogs>0</InterruptLogs>
+        <ForcedTimeStamps>0</ForcedTimeStamps>
+        <EventCPI>0</EventCPI>
+        <EventEXC>0</EventEXC>
+        <EventFOLD>0</EventFOLD>
+        <EventLSU>0</EventLSU>
+        <EventSLEEP>0</EventSLEEP>
+    </SWOTraceWindow>
+    <Log_file>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+        <Category>_ 0</Category>
+    </Log_file>
+    <DriverProfiling>
+        <Enabled>0</Enabled>
+        <Mode>3</Mode>
+        <Graph>0</Graph>
+        <Symbiont>0</Symbiont>
+        <Exclusions />
+    </DriverProfiling>
+    <Disassemble_mode>
+        <mode>0</mode>
+    </Disassemble_mode>
+    <InterruptLog>
+        <LogEnabled>0</LogEnabled>
+        <GraphEnabled>0</GraphEnabled>
+        <ShowTimeLog>1</ShowTimeLog>
+        <SumEnabled>0</SumEnabled>
+        <ShowTimeSum>1</ShowTimeSum>
+        <SumSortOrder>0</SumSortOrder>
+    </InterruptLog>
+    <DataLog>
+        <LogEnabled>0</LogEnabled>
+        <GraphEnabled>0</GraphEnabled>
+        <ShowTimeLog>1</ShowTimeLog>
+        <SumEnabled>0</SumEnabled>
+        <ShowTimeSum>1</ShowTimeSum>
+    </DataLog>
+    <Interrupts>
+        <Enabled>1</Enabled>
+    </Interrupts>
+    <MemConfig>
+        <Base>1</Base>
+        <Manual>0</Manual>
+        <Ddf>1</Ddf>
+        <TypeViol>0</TypeViol>
+        <Stop>1</Stop>
+    </MemConfig>
+    <Simulator>
+        <Freq>10000000</Freq>
+        <FreqHi>0</FreqHi>
+        <MultiCoreRunAll>1</MultiCoreRunAll>
+    </Simulator>
+    <struct_types>
+        <Fmt0>DEVICE_AES_T-self_ID	4	0</Fmt0>
+        <Fmt1>DEVIVE_MAC_T-dev_action_bits	4	0</Fmt1>
+        <Fmt2>DEVIVE_MAC_T-mac_crc_h	4	0</Fmt2>
+        <Fmt3>DEVIVE_MAC_T-mac_crc_l	4	0</Fmt3>
+        <Fmt4>DEVIVE_MAC_T-mac_frame_len	4	0</Fmt4>
+        <Fmt5>DEVIVE_MAC_T-mac_h	4	0</Fmt5>
+        <Fmt6>DEVIVE_MAC_T-mac_len	4	0</Fmt6>
+        <Fmt7>DEVIVE_MAC_T-mate_dev_exist	4	0</Fmt7>
+        <Fmt8>DEVIVE_MAC_T-nc	4	0</Fmt8>
+        <Fmt9>HKFrame_TypDef-OnLine_Cnt	3	0</Fmt9>
+        <Fmt10>HKFrame_TypDef-OnLine_Staus	3	0</Fmt10>
+        <Fmt11>HKFrame_TypDef-RetryBuf_Space	4	0</Fmt11>
+        <Fmt12>HK_Device_TypDef-Pending_Flag	4	0</Fmt12>
+        <Fmt13>HK_Device_TypDef-UpReport_Flag	4	0</Fmt13>
+        <Fmt14>HK_Device_TypDef-UpReport_cnt	3	0</Fmt14>
+        <Fmt15>MATE_INFO_T-Self_Cur_Switch	4	0</Fmt15>
+        <Fmt16>Retry_TypDef-RetryBuf_Number	3	0</Fmt16>
+        <Fmt17>Retry_TypDef-RetryCnt	3	0</Fmt17>
+        <Fmt18>Retry_TypDef-Retry_SendLen	3	0</Fmt18>
+        <Fmt19>Switch_Cmd_typ-Com_type	3	0</Fmt19>
+        <Fmt20>Switch_Cmd_typ-boardcast	3	0</Fmt20>
+        <Fmt21>Switch_Cmd_typ-mode	3	0</Fmt21>
+        <Fmt22>Switch_Cmd_typ-respond	3	0</Fmt22>
+        <Fmt23>Switch_Cmd_typ-temp	3	0</Fmt23>
+        <Fmt24>Switch_Info-Dev_ID	4	0</Fmt24>
+        <Fmt25>Switch_Info-status	3	0</Fmt25>
+        <Fmt26>Switch_choice-Mate_Which_num	3	0</Fmt26>
+        <Fmt27>Switch_choice-Self_Which_num	4	0</Fmt27>
+        <Fmt28>WLS-Sent_TimeOut_Cnt	3	0</Fmt28>
+        <Fmt29>WLS-WirelessRx_Timeout_Cnt	3	0</Fmt29>
+        <Fmt30>WLS-Wireless_RSSI_Value	3	0</Fmt30>
+        <Fmt31>WL_CMD_typ-Alive	4	0</Fmt31>
+        <Fmt32>WL_CMD_typ-Com_Type	4	0</Fmt32>
+        <Fmt33>WL_CMD_typ-Comm_Mode	4	0</Fmt33>
+        <Fmt34>WL_CMD_typ-Direction	4	0</Fmt34>
+        <Fmt35>WL_CMD_typ-Self_Frame	4	0</Fmt35>
+        <Fmt36>WL_CMD_typ-Self_Rout	4	0</Fmt36>
+        <Fmt37>WL_CMD_typ-Use_rout	4	0</Fmt37>
+        <Fmt38>WL_CMD_typ-Work_Mode	4	0</Fmt38>
+        <Fmt39>tRadioConfiguration-Radio_ChannelNumber	4	0</Fmt39>
+        <Fmt40>tRadioConfiguration-Radio_PacketLength	3	0</Fmt40>
+        <Fmt41>tRadioConfiguration-Radio_State_After_Power_Up	3	0</Fmt41>
+    </struct_types>
+    <array_types>
+        <Fmt0>U8[450]	4	0</Fmt0>
+        <Fmt1>uint8_t[16]	4	0</Fmt1>
+        <Fmt2>uint8_t[188]	4	0</Fmt2>
+        <Fmt3>uint8_t[18]	4	0</Fmt3>
+        <Fmt4>uint8_t[20]	4	0</Fmt4>
+        <Fmt5>uint8_t[21]	4	0</Fmt5>
+        <Fmt6>uint8_t[227]	4	0</Fmt6>
+        <Fmt7>uint8_t[244]	4	0</Fmt7>
+        <Fmt8>uint8_t[252]	4	0</Fmt8>
+        <Fmt9>uint8_t[255]	4	0</Fmt9>
+        <Fmt10>uint8_t[256]	4	0</Fmt10>
+        <Fmt11>uint8_t[2]	4	0</Fmt11>
+        <Fmt12>uint8_t[315]	4	0</Fmt12>
+        <Fmt13>uint8_t[39]	4	0</Fmt13>
+        <Fmt14>uint8_t[3]	4	0</Fmt14>
+        <Fmt15>uint8_t[4]	4	0</Fmt15>
+        <Fmt16>uint8_t[54]	4	0</Fmt16>
+        <Fmt17>uint8_t[6]	4	0</Fmt17>
+        <Fmt18>unsigned char[16]	4	0</Fmt18>
+    </array_types>
+    <watch_formats>
+        <Fmt0>{W}42:Cancel_MateFlag1	3	0</Fmt0>
+        <Fmt1>{W}42:Encrypt_Convert_Cnt	3	0</Fmt1>
+        <Fmt2>{W}42:FrrA_Val	4	0</Fmt2>
+        <Fmt3>{W}42:FrrB_Val	4	0</Fmt3>
+        <Fmt4>{W}42:FrrD_Val	4	0</Fmt4>
+        <Fmt5>{W}42:LogicAddr_SetFlag	4	0</Fmt5>
+        <Fmt6>{W}42:MateAddr_SetFlag	3	0</Fmt6>
+        <Fmt7>{W}42:RECEIVE_REMAIN	3	0</Fmt7>
+        <Fmt8>{W}42:RECEIVE_TIMES	3	0</Fmt8>
+        <Fmt9>{W}42:SYSTICK_CNT	3	0</Fmt9>
+        <Fmt10>{W}42:Secret_GKey_Flag	4	0</Fmt10>
+        <Fmt11>{W}42:Secret_KeyOk_Flag	4	0</Fmt11>
+        <Fmt12>{W}42:Slave_Device_Size	3	0</Fmt12>
+        <Fmt13>{W}42:Touch1_LastState	4	0</Fmt13>
+        <Fmt14>{W}42:Wireless_Channel	3	0</Fmt14>
+        <Fmt15>{W}42:a	4	0</Fmt15>
+        <Fmt16>{W}42:a123	4	0</Fmt16>
+        <Fmt17>{W}42:crc16_val	4	0</Fmt17>
+        <Fmt18>{W}42:retry_cnt	3	0</Fmt18>
+        <Fmt19>{W}42:test_cnt	4	0</Fmt19>
+    </watch_formats>
+    <Images>
+        <Image0>switch:0xfffffffe</Image0>
+    </Images>
+    <TermIOLog>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+    </TermIOLog>
+    <LogFile>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+        <Category>_ 0</Category>
+    </LogFile>
+    <CallStackLog>
+        <Enabled>0</Enabled>
+    </CallStackLog>
+    <CallStackStripe>
+        <ShowTiming>1</ShowTiming>
+    </CallStackStripe>
+    <DisassembleMode>
+        <mode>0</mode>
+    </DisassembleMode>
+    <Breakpoints2>
+        <Count>0</Count>
+    </Breakpoints2>
+    <Aliases>
+        <A0>_ "D:\devin\data\0302新开关板\(0418)Switch V1.1 进行中\MAIN\main.c" "D:\小I\开关板\0302新开关板\(0419)Switch V1.1 进行中\MAIN\main.c"</A0>
+        <A1>_ "D:\devin\data\0302新开关板\(0426)Switch V1.1 进行中\MAIN\main.c" "D:\小I\开关板\0302新开关板\(0426)Switch V1.1进行中\MAIN\main.c"</A1>
+        <A2>_ "D:\devin\data\小I\0419程序待优化\(0420)Switch V1.1 进行中\MAIN\main.c" "D:\小I\042017\(042017)Switch V1.1 进行中\MAIN\main.c"</A2>
+        <A3>_ "D:\devin\data\开关板\(1114)Switch V1.0 进行中\API\peripheral\stm32f0_exint.c" "D:\小I\开关板\(112319)Switch V1.0 进行中\API\peripheral\stm32f0_exint.c"</A3>
+        <A4>_ "D:\devin\data\开关板\(1114)Switch V1.0 进行中\API\peripheral\stm32f0_rcc.c" "D:\小I\开关板\(112319)Switch V1.0 进行中\API\peripheral\stm32f0_rcc.c"</A4>
+        <A5>_ "D:\devin\data\开关板\(1124)Switch V1.0 进行中\MAIN\main.c" "D:\小I\开关板\(1124)Switch V1.0 进行中\MAIN\main.c"</A5>
+        <A6>_ "D:\devin\data\开关板\(1125)Switch V1.0 进行中\MAIN\main.c" "D:\小I\开关板\(112517)Switch V1.0 进行中\MAIN\main.c"</A6>
+        <A7>_ "D:\devin\data\开关板\(1205)Switch V1.0 进行中\MAIN\main.c" "D:\小I\开关板\(1205)Switch V1.0 进行中\MAIN\main.c"</A7>
+        <A8>_ "D:\小I\STM32开关板\(0822)Switch V1.1进行中\MAIN\main.c" "D:\小I\STM32开关板\(1001)Switch V1.1进行中\MAIN\main.c"</A8>
+        <A9>_ "D:\小I\STM32开关板\(1001)Switch V1.1进行中\MAIN\main.c" "D:\小I\STM32开关板\(1003)Switch V1.1进行中\MAIN\main.c"</A9>
+        <Count>10</Count>
+        <SuppressDialog>0</SuppressDialog>
+    </Aliases>
+</settings>

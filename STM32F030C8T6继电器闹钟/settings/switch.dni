@@ -1,0 +1,160 @@
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[StLinkDriver]
+CStepIntDis=_ 0
+LeaveTargetRunning=_ 0
+stlinkserialNo=21341387
+stlinkfoundProbes=
+[DebugChecksum]
+Checksum=-682851548
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[CallStackStripe]
+ShowTiming=1
+[CodeCoverage]
+Enabled=_ 0
+[Interrupts]
+Enabled=1
+[MemConfig]
+Base=1
+Manual=0
+Ddf=1
+TypeViol=0
+Stop=1
+[Trace1]
+Enabled=0
+ShowSource=1
+[Simulator]
+Freq=10000000
+MultiCoreRunAll=1
+[stlink]
+stlinkserialNo=EE5626A6
+stlinkfoundProbes=
+[SWOTraceHWSettings]
+OverrideDefaultClocks=0
+CpuClock=72000000
+ClockAutoDetect=0
+ClockWanted=2000000
+JtagSpeed=2000000
+Prescaler=36
+TimeStampPrescIndex=0
+TimeStampPrescData=0
+PcSampCYCTAP=1
+PcSampPOSTCNT=15
+PcSampIndex=0
+DataLogMode=0
+ITMportsEnable=0
+ITMportsTermIO=0
+ITMportsLogFile=0
+ITMlogFile=$PROJ_DIR$\ITM.log
+[struct_types]
+Fmt0=HK_Device_TypDef-Pending_Flag	3	0
+Fmt1=HK_Device_TypDef-Switch1Dis_Cnt	3	0
+Fmt2=HK_Device_TypDef-Switch2Dis_Cnt	3	0
+Fmt3=HK_Device_TypDef-Switch3Dis_Cnt	3	0
+Fmt4=HK_Device_TypDef-SwitchChange_Flag	4	0
+Fmt5=HK_Device_TypDef-Switch_Val	4	0
+Fmt6=UartFrame_TX_TypDef-Frame_Len	4	0
+Fmt7=UpCom_Rx_TypDef-FrameTotalLen	4	0
+Fmt8=WLS-Sent_TimeOut_Cnt	3	0
+Fmt9=WLS-Wireless_ChannelNumber	3	0
+Fmt10=WLS-Wireless_PacketLength	3	0
+Fmt11=WLS-Wireless_RSSI_Value	3	0
+[array_types]
+Fmt0=uint8_t[18]	4	0
+Fmt1=uint8_t[21]	4	0
+Fmt2=uint8_t[227]	4	0
+Fmt3=uint8_t[252]	4	0
+Fmt4=uint8_t[255]	4	0
+Fmt5=uint8_t[2]	4	0
+Fmt6=uint8_t[315]	4	0
+Fmt7=uint8_t[39]	4	0
+Fmt8=uint8_t[3]	4	0
+Fmt9=uint8_t[4]	4	0
+Fmt10=uint8_t[54]	4	0
+Fmt11=unsigned char[16]	4	0
+[watch_formats]
+Fmt0={W}42:Encrypt_Convert_Cnt	3	0
+Fmt1={W}42:FrrA_Val	4	0
+Fmt2={W}42:FrrB_Val	4	0
+Fmt3={W}42:FrrD_Val	4	0
+Fmt4={W}42:LogicAddr_SetFlag	4	0
+Fmt5={W}42:SYSTICK_CNT	3	0
+Fmt6={W}42:Secret_GKey_Flag	4	0
+Fmt7={W}42:Secret_KeyOk_Flag	4	0
+Fmt8={W}42:Slave_Device_Size	3	0
+Fmt9={W}42:Touch1_LastState	4	0
+Fmt10={W}42:Wireless_Channel	3	0
+Fmt11={W}42:a	4	0
+Fmt12={W}42:a123	4	0
+Fmt13={W}42:test_cnt	4	0
+[Trace2]
+Enabled=0
+ShowSource=0
+[SWOTraceWindow]
+PcSampling=0
+InterruptLogs=0
+ForcedTimeStamps=0
+EventCPI=0
+EventEXC=0
+EventFOLD=0
+EventLSU=0
+EventSLEEP=0
+[DataLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+[InterruptLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+SumSortOrder=0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=3
+Graph=0
+Symbiont=0
+Exclusions=
+[Disassemble mode]
+mode=0
+[Breakpoints2]
+Count=0
+[Aliases]
+A0=_ "D:\devin\data\0302新开关板\(0418)Switch V1.1 进行中\MAIN\main.c" "D:\小I\开关板\0302新开关板\(0419)Switch V1.1 进行中\MAIN\main.c"
+A1=_ "D:\devin\data\0302新开关板\(0426)Switch V1.1 进行中\MAIN\main.c" "D:\小I\开关板\0302新开关板\(0426)Switch V1.1进行中\MAIN\main.c"
+A2=_ "D:\devin\data\开关板\(1114)Switch V1.0 进行中\API\peripheral\stm32f0_exint.c" "D:\小I\开关板\(112319)Switch V1.0 进行中\API\peripheral\stm32f0_exint.c"
+A3=_ "D:\devin\data\开关板\(1114)Switch V1.0 进行中\API\peripheral\stm32f0_rcc.c" "D:\小I\开关板\(112319)Switch V1.0 进行中\API\peripheral\stm32f0_rcc.c"
+A4=_ "D:\devin\data\开关板\(1124)Switch V1.0 进行中\MAIN\main.c" "D:\小I\开关板\(1124)Switch V1.0 进行中\MAIN\main.c"
+A5=_ "D:\devin\data\开关板\(1125)Switch V1.0 进行中\MAIN\main.c" "D:\小I\开关板\(112517)Switch V1.0 进行中\MAIN\main.c"
+A6=_ "D:\devin\data\开关板\(1205)Switch V1.0 进行中\MAIN\main.c" "D:\小I\开关板\(1205)Switch V1.0 进行中\MAIN\main.c"
+A7=_ "D:\devin\data\小I\0419程序待优化\(0420)Switch V1.1 进行中\MAIN\main.c" "D:\小I\042017\(042017)Switch V1.1 进行中\MAIN\main.c"
+A8=_ "D:\小I\STM32开关板\(0822)Switch V1.1进行中\MAIN\main.c" "D:\小I\STM32开关板\(1001)Switch V1.1进行中\MAIN\main.c"
+A9=_ "D:\小I\STM32开关板\(1001)Switch V1.1进行中\MAIN\main.c" "D:\小I\STM32开关板\(1003)Switch V1.1进行中\MAIN\main.c"
+Count=10
+SuppressDialog=0
