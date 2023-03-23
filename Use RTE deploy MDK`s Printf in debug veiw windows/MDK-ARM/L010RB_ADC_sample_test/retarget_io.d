@@ -1,0 +1,9 @@
+l010rb_adc_sample_test\retarget_io.o: C:\Keil_v5\ARM\PACK\Keil\ARM_Compiler\1.6.2\Source\retarget_io.c
+l010rb_adc_sample_test\retarget_io.o: D:\DS-5\include\string.h
+l010rb_adc_sample_test\retarget_io.o: D:\DS-5\include\stdint.h
+l010rb_adc_sample_test\retarget_io.o: D:\DS-5\include\stdio.h
+l010rb_adc_sample_test\retarget_io.o: D:\DS-5\include\stdlib.h
+l010rb_adc_sample_test\retarget_io.o: D:\DS-5\include\assert.h
+l010rb_adc_sample_test\retarget_io.o: D:\DS-5\include\rt_sys.h
+l010rb_adc_sample_test\retarget_io.o: .\RTE\_L010RB_ADC_sample_test\RTE_Components.h
+l010rb_adc_sample_test\retarget_io.o: C:\Keil_v5\ARM\PACK\Keil\ARM_Compiler\1.6.2\Include\EventRecorder.h

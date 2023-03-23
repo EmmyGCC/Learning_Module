@@ -1,0 +1,1 @@
+l010rb_adc_sample_test\startup_stm32l010xb.o: startup_stm32l010xb.s
