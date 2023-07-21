@@ -2,7 +2,7 @@
 .\objects\lcd.o: app\LCD\lcd.h
 .\objects\lcd.o: .\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\stm32f10x.h
 .\objects\lcd.o: .\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
-.\objects\lcd.o: D:\Keil ARM\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\lcd.o: D:\ARM_Compiler_5\include\stdint.h
 .\objects\lcd.o: .\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\system_stm32f10x.h
 .\objects\lcd.o: .\user\stm32f10x_conf.h
 .\objects\lcd.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h
@@ -29,5 +29,5 @@
 .\objects\lcd.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h
 .\objects\lcd.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h
 .\objects\lcd.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h
-.\objects\lcd.o: D:\Keil ARM\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\lcd.o: D:\ARM_Compiler_5\include\stdlib.h
 .\objects\lcd.o: .\app\DELAY\delay.h

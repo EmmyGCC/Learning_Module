@@ -1,9 +1,9 @@
 f103zet6_lcd_pro\lcd.o: ..\User\src\lcd.c
 f103zet6_lcd_pro\lcd.o: ..\User\inc\lcd.h
 f103zet6_lcd_pro\lcd.o: ..\User\inc\sys.h
-f103zet6_lcd_pro\lcd.o: D:\Keil ARM\ARM\ARMCC\Bin\..\include\stdint.h
-f103zet6_lcd_pro\lcd.o: D:\Keil ARM\ARM\ARMCC\Bin\..\include\stdio.h
-f103zet6_lcd_pro\lcd.o: D:\Keil ARM\ARM\ARMCC\Bin\..\include\string.h
+f103zet6_lcd_pro\lcd.o: D:\ARM_Compiler_5\include\stdint.h
+f103zet6_lcd_pro\lcd.o: D:\ARM_Compiler_5\include\stdio.h
+f103zet6_lcd_pro\lcd.o: D:\ARM_Compiler_5\include\string.h
 f103zet6_lcd_pro\lcd.o: ..\User\inc\font.h
 f103zet6_lcd_pro\lcd.o: ../Inc/usart.h
 f103zet6_lcd_pro\lcd.o: ../Inc/main.h
@@ -19,7 +19,7 @@ f103zet6_lcd_pro\lcd.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 f103zet6_lcd_pro\lcd.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
 f103zet6_lcd_pro\lcd.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
 f103zet6_lcd_pro\lcd.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
-f103zet6_lcd_pro\lcd.o: D:\Keil ARM\ARM\ARMCC\Bin\..\include\stddef.h
+f103zet6_lcd_pro\lcd.o: D:\ARM_Compiler_5\include\stddef.h
 f103zet6_lcd_pro\lcd.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 f103zet6_lcd_pro\lcd.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
 f103zet6_lcd_pro\lcd.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h

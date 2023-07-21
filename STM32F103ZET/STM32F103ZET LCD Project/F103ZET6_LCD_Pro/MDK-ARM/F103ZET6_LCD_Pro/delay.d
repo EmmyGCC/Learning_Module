@@ -1,6 +1,6 @@
 f103zet6_lcd_pro\delay.o: ..\User\src\delay.c
 f103zet6_lcd_pro\delay.o: ..\User\inc\delay.h
-f103zet6_lcd_pro\delay.o: D:\Keil ARM\ARM\ARMCC\Bin\..\include\stdint.h
+f103zet6_lcd_pro\delay.o: D:\ARM_Compiler_5\include\stdint.h
 f103zet6_lcd_pro\delay.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 f103zet6_lcd_pro\delay.o: ../Inc/stm32f1xx_hal_conf.h
 f103zet6_lcd_pro\delay.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
@@ -13,7 +13,7 @@ f103zet6_lcd_pro\delay.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 f103zet6_lcd_pro\delay.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
 f103zet6_lcd_pro\delay.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
 f103zet6_lcd_pro\delay.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
-f103zet6_lcd_pro\delay.o: D:\Keil ARM\ARM\ARMCC\Bin\..\include\stddef.h
+f103zet6_lcd_pro\delay.o: D:\ARM_Compiler_5\include\stddef.h
 f103zet6_lcd_pro\delay.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 f103zet6_lcd_pro\delay.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
 f103zet6_lcd_pro\delay.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h

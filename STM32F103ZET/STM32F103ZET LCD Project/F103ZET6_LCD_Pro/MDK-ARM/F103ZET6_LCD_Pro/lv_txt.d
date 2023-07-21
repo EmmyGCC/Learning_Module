@@ -1,0 +1,15 @@
+f103zet6_lcd_pro\lv_txt.o: ..\GUI\lvgl\src\lv_misc\lv_txt.c
+f103zet6_lcd_pro\lv_txt.o: ..\GUI\lvgl\src\lv_misc\lv_txt.h
+f103zet6_lcd_pro\lv_txt.o: ..\GUI\lvgl\src\lv_misc\../lv_conf_internal.h
+f103zet6_lcd_pro\lv_txt.o: D:\ARM_Compiler_5\include\stdint.h
+f103zet6_lcd_pro\lv_txt.o: ..\GUI\lvgl\src\lv_misc\../../../lv_conf.h
+f103zet6_lcd_pro\lv_txt.o: D:\ARM_Compiler_5\include\stdbool.h
+f103zet6_lcd_pro\lv_txt.o: ..\GUI\lvgl\src\lv_misc\lv_area.h
+f103zet6_lcd_pro\lv_txt.o: D:\ARM_Compiler_5\include\string.h
+f103zet6_lcd_pro\lv_txt.o: ..\GUI\lvgl\src\lv_misc\lv_mem.h
+f103zet6_lcd_pro\lv_txt.o: D:\ARM_Compiler_5\include\stddef.h
+f103zet6_lcd_pro\lv_txt.o: ..\GUI\lvgl\src\lv_misc\lv_log.h
+f103zet6_lcd_pro\lv_txt.o: ..\GUI\lvgl\src\lv_misc\lv_types.h
+f103zet6_lcd_pro\lv_txt.o: ..\GUI\lvgl\src\lv_misc\../lv_font/lv_font.h
+f103zet6_lcd_pro\lv_txt.o: ..\GUI\lvgl\src\lv_misc\../lv_font/lv_symbol_def.h
+f103zet6_lcd_pro\lv_txt.o: ..\GUI\lvgl\src\lv_misc\lv_math.h

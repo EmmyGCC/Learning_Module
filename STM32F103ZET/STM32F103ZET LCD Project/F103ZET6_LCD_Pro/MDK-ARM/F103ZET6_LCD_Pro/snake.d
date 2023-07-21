@@ -1,10 +1,10 @@
 f103zet6_lcd_pro\snake.o: ..\User\src\snake.c
 f103zet6_lcd_pro\snake.o: ..\User\inc\snake.h
-f103zet6_lcd_pro\snake.o: D:\Keil ARM\ARM\ARMCC\Bin\..\include\stdint.h
-f103zet6_lcd_pro\snake.o: D:\Keil ARM\ARM\ARMCC\Bin\..\include\stdlib.h
-f103zet6_lcd_pro\snake.o: D:\Keil ARM\ARM\ARMCC\Bin\..\include\string.h
-f103zet6_lcd_pro\snake.o: D:\Keil ARM\ARM\ARMCC\Bin\..\include\stdio.h
-f103zet6_lcd_pro\snake.o: D:\Keil ARM\ARM\ARMCC\Bin\..\include\time.h
+f103zet6_lcd_pro\snake.o: D:\ARM_Compiler_5\include\stdint.h
+f103zet6_lcd_pro\snake.o: D:\ARM_Compiler_5\include\stdlib.h
+f103zet6_lcd_pro\snake.o: D:\ARM_Compiler_5\include\string.h
+f103zet6_lcd_pro\snake.o: D:\ARM_Compiler_5\include\stdio.h
+f103zet6_lcd_pro\snake.o: D:\ARM_Compiler_5\include\time.h
 f103zet6_lcd_pro\snake.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 f103zet6_lcd_pro\snake.o: ../Inc/stm32f1xx_hal_conf.h
 f103zet6_lcd_pro\snake.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
@@ -17,7 +17,7 @@ f103zet6_lcd_pro\snake.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 f103zet6_lcd_pro\snake.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
 f103zet6_lcd_pro\snake.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
 f103zet6_lcd_pro\snake.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
-f103zet6_lcd_pro\snake.o: D:\Keil ARM\ARM\ARMCC\Bin\..\include\stddef.h
+f103zet6_lcd_pro\snake.o: D:\ARM_Compiler_5\include\stddef.h
 f103zet6_lcd_pro\snake.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 f103zet6_lcd_pro\snake.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
 f103zet6_lcd_pro\snake.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h

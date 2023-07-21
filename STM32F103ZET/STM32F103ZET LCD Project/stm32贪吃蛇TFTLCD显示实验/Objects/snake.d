@@ -1,7 +1,7 @@
 .\objects\snake.o: app\SNAKE\snake.c
 .\objects\snake.o: .\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\stm32f10x.h
 .\objects\snake.o: .\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
-.\objects\snake.o: D:\Keil ARM\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\snake.o: D:\ARM_Compiler_5\include\stdint.h
 .\objects\snake.o: .\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\system_stm32f10x.h
 .\objects\snake.o: .\user\stm32f10x_conf.h
 .\objects\snake.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h
@@ -29,6 +29,6 @@
 .\objects\snake.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h
 .\objects\snake.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h
 .\objects\snake.o: .\app\LCD\lcd.h
-.\objects\snake.o: D:\Keil ARM\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\snake.o: D:\ARM_Compiler_5\include\stdlib.h
 .\objects\snake.o: app\SNAKE\snake.h
-.\objects\snake.o: D:\Keil ARM\ARM\ARMCC\Bin\..\include\time.h
+.\objects\snake.o: D:\ARM_Compiler_5\include\time.h

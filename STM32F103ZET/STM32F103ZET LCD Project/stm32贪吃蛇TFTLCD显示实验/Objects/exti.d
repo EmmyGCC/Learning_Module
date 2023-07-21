@@ -1,7 +1,7 @@
 .\objects\exti.o: app\Key_Exit\exti.c
 .\objects\exti.o: .\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\stm32f10x.h
 .\objects\exti.o: .\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
-.\objects\exti.o: D:\Keil ARM\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\exti.o: D:\ARM_Compiler_5\include\stdint.h
 .\objects\exti.o: .\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\system_stm32f10x.h
 .\objects\exti.o: .\user\stm32f10x_conf.h
 .\objects\exti.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h
@@ -30,5 +30,5 @@
 .\objects\exti.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h
 .\objects\exti.o: app\Key_Exit\exti.h
 .\objects\exti.o: .\app\LCD\lcd.h
-.\objects\exti.o: D:\Keil ARM\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\exti.o: D:\ARM_Compiler_5\include\stdlib.h
 .\objects\exti.o: .\app\DELAY\delay.h

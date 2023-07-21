@@ -115,12 +115,12 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   uint8_t dir = DIR_NONE;
-  uint16_t time = 400;
+  uint16_t time = 500;
   
   LCD_ShowString(10, 90, 200, FONT_SIZE_16, "UP: HARD");
   LCD_ShowString(10, 130, 200, FONT_SIZE_16, "LEFT/RIGHT: MEDIUM");
   LCD_ShowString(10, 170, 200, FONT_SIZE_16, "DOWN: EASY");
-  
+  #if 0
     while(dir == DIR_NONE)
     {
         dir = Snake_Direction_Input();
@@ -140,18 +140,20 @@ int main(void)
                 break;
         }
     }
+	#endif
     LCD_ShowString(10, 90, 200, FONT_SIZE_16, "                  ");
     LCD_ShowString(10, 130, 200, FONT_SIZE_16, "                  ");
     LCD_ShowString(10, 170, 200, FONT_SIZE_16, "                  ");
   while (1)
   {
-    /*
-    LCD_ShowString(30, 40, strlen("WarShip STM32 ^_^")*(24/2), FONT_SIZE_24, "WarShip STM32 ^_^");
-    LCD_ShowString(30, 70, 11*(16/2), FONT_SIZE_16, "TFTLCD TEST");
-    LCD_ShowString(30, 90, 200, FONT_SIZE_16, "ATOM@ALIENTEK");
-    LCD_ShowString(30, 130, 200, FONT_SIZE_12, "2014/5/4");
-      */
-      Game_Running(SnakeList);
+    LCD_Color_Fill(30, 50,200,100,BLACK);
+	  
+    //LCD_ShowString(30, 40, strlen("WarShip STM32 ^_^")*(24/2), FONT_SIZE_24, "WarShip STM32 ^_^");
+    //LCD_ShowString(30, 70, 11*(16/2), FONT_SIZE_16, "TFTLCD TEST");
+    //LCD_ShowString(30, 90, 200, FONT_SIZE_16, "ATOM@ALIENTEK");
+    //LCD_ShowString(30, 130, 200, FONT_SIZE_12, "2014/5/4");
+    
+      //Game_Running(SnakeList);
 
       delay_ms(time);
 
